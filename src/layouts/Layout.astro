@@ -15,13 +15,14 @@ import "../styles/global.css";
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
 
 <style>
-  html,
   body {
     margin: 0;
     width: 100%;
@@ -30,5 +31,6 @@ import "../styles/global.css";
     padding: 90px 16px 40px 16px;
     color: #ffffff;
     overflow-x: hidden;
+    position: relative;
   }
 </style>
