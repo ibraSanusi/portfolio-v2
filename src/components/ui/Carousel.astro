@@ -1,0 +1,48 @@
+---
+const badges = [
+  "Diseño Web",
+  "SEO",
+  "Animaciones",
+  "Ecommerce",
+  "Next.js",
+  "React.js",
+];
+---
+
+<article id="carousel" class="m-auto flex w-11/12 overflow-x-auto">
+  {
+    Array.from({ length: 3 }).map(() => (
+      <ul
+        id="carousel-group"
+        class="flex flex-row gap-2 pr-2 justify-center items-center animate-[spin_10s_linear_infinite]"
+      >
+        {
+          // Duplicamos los elementos para lograr el efecto infinito
+          Array.from({ length: 1 }).map(() =>
+            badges.map((badge) => (
+              <li class="py-1.5 px-4 basis-[5em] text-nowrap rounded-full text-xs bg-brand-fifth border border-brand-fifth-dark text-center font-medium">
+                {badge}
+              </li>
+            ))
+          )
+        }
+      </ul>
+    ))
+  }
+</article>
+
+<style>
+  #carousel {
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  @keyframes spin {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: -100%;
+    }
+  }
+</style>

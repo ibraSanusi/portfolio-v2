@@ -1,0 +1,55 @@
+---
+import TVIcon from "../ui/icons/TVIcon.astro";
+
+const whatIDo = [
+  {
+    icon: TVIcon,
+    title: "Maqueto Webs",
+    description:
+      "Mejoro la estética y funcionalidad de tu web, consiguiendo másconversiones.",
+  },
+  {
+    icon: TVIcon,
+    title: "Maqueto Webs",
+    description:
+      "Mejoro la estética y funcionalidad de tu web, consiguiendo másconversiones.",
+  },
+  {
+    icon: TVIcon,
+    title: "Maqueto Webs",
+    description:
+      "Mejoro la estética y funcionalidad de tu web, consiguiendo másconversiones.",
+  },
+  {
+    icon: TVIcon,
+    title: "Maqueto Webs",
+    description:
+      "Mejoro la estética y funcionalidad de tu web, consiguiendo másconversiones.",
+  },
+];
+---
+
+<div>
+  <h2>¿Qué hago?</h2>
+  <section>
+    {
+      whatIDo.map((item) => {
+        const CustomIcon = item.icon;
+        return (
+          <article class="p-2 rounded-2xl border-[#171717] border">
+            <div class="w-full bg-[#171717] p-6 rounded-lg">
+              <div class="rounded-full bg-black p-4 w-fit m-auto">
+                <CustomIcon />
+              </div>
+            </div>
+
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="text-center">{item.title}</h3>
+              <p class="text-center text-gray-second">{item.description}</p>
+            </div>
+          </article>
+        );
+      })
+    }
+  </section>
+</div>

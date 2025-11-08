@@ -1,0 +1,69 @@
+---
+import CheckIcon from "../ui/icons/CheckIcon.astro";
+
+const prices = [
+  {
+    title: "Por proyecto",
+    description: "Para el cliente que está buscando una One Page",
+    price: {
+      amount: 70,
+      per: "proyecto",
+    },
+    checks: ["Una sola inversion", "Total propiedad", "Hasta revisiones"],
+  },
+  {
+    title: "Por proyecto",
+    description: "Para el cliente que está buscando una One Page",
+    price: {
+      amount: 70,
+      per: "proyecto",
+    },
+    checks: ["Una sola inversion", "Total propiedad", "Hasta revisiones"],
+  },
+  {
+    title: "Por proyecto",
+    description: "Para el cliente que está buscando una One Page",
+    price: {
+      amount: 70,
+      per: "proyecto",
+    },
+    checks: ["Una sola inversion", "Total propiedad", "Hasta revisiones"],
+  },
+];
+---
+
+<div>
+  <h3>Precios</h3>
+  <section>
+    {
+      prices.map((item) => (
+        <article class="rounded-2xl space-y-4 p-10 border border-[#171717]">
+          <div class="space-y-1">
+            <h4>{item.title}</h4>
+            <p class="text-gray-second text-sm">{item.description}</p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-gray-second text-xs">Desde</span>
+            <span class="text-3xl">
+              {item.price.amount}€<span class="text-lg">/{item.price.per}</span>
+            </span>
+          </div>
+
+          <button class="w-full rounded-2xl bg-brand text-black p-4">
+            Agenda una llamada
+          </button>
+
+          <ul>
+            {item.checks.map((check) => (
+              <li class="text-white flex flex-row items-center gap-2">
+                <CheckIcon />
+                <span>{check}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </section>
+</div>

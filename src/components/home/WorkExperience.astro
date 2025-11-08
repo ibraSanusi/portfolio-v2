@@ -1,0 +1,37 @@
+---
+import ArrowRight from "../ui/icons/ArrowRight.astro";
+---
+
+<div>
+  <div class="flex flex-row justify-between">
+    <h3>Experiencia de trabajo</h3>
+    <a href="/">Ver todos</a>
+  </div>
+
+  <section>
+    <article class="flex flex-row justify-between">
+      <div class="flex flex-col gap-0.5">
+        <p>Desarrollador fullstack - Fullcircle S.L</p>
+        <span class="flex flex-row gap-4 text-gray-second text-sm">
+          Jul 01, 2025 • actualidad
+        </span>
+      </div>
+      <div class="h-full">
+        <div class="p-2 rounded-full border border-white w-fit">
+          <a href="/">
+            <ArrowRight />
+          </a>
+        </div>
+      </div>
+    </article>
+    <hr />
+  </section>
+</div>
+
+<style>
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 24px 0px;
+  }
+</style>

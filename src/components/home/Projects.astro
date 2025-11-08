@@ -1,0 +1,42 @@
+---
+import Badge from "../ui/Badge.astro";
+
+const projects = [
+  {
+    imgUrl: "/show-case-1.avif",
+    alt: "Imagen del proyecto examio",
+    title: "Examio",
+    description: "Practica tu examen con IA.",
+    badgeTitle: "Free",
+  },
+  {
+    imgUrl: "/show-case-2.avif",
+    alt: "Imagen del proyecto de Plazoria Mall",
+    title: "Plazoriamall",
+    description: "Tienda online.",
+    badgeTitle: "Free",
+  },
+];
+---
+
+<div>
+  <div class="flex flex-row justify-between">
+    <h2>Proyectos</h2>
+    <a href="/">Ver todos</a>
+  </div>
+
+  <section class="grid grid-cols-2 gap-4">
+    {
+      projects.map((project) => (
+        <article class="flex flex-col gap-4">
+          <img class="rounded-2xl" src={project.imgUrl} alt={project.alt} />
+          <div>
+            <span class="text-2xl">{project.title}</span>
+            <p class="text-gray-second text-md">{project.description}</p>
+          </div>
+          <Badge title={project.badgeTitle} />
+        </article>
+      ))
+    }
+  </section>
+</div>
