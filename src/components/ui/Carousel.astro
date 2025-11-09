@@ -9,7 +9,7 @@ const badges = [
 ];
 ---
 
-<article id="carousel" class="m-auto flex w-11/12 overflow-x-auto">
+<article id="carousel" class="m-auto flex w-80 overflow-x-auto">
   {
     Array.from({ length: 3 }).map(() => (
       <ul
@@ -35,6 +35,22 @@ const badges = [
   #carousel {
     -ms-overflow-style: none; /* IE/Edge */
     scrollbar-width: none; /* Firefox */
+
+    mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgb(0, 0, 0) 12.5%,
+      rgb(0, 0, 0) 87.5%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    ); /* necesario para Safari */
   }
 
   @keyframes spin {
