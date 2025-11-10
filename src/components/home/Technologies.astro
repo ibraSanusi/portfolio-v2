@@ -1,13 +1,27 @@
 ---
 import Carousel from "../ui/Carousel.astro";
+
+const badges = [
+  "Diseño Web",
+  "SEO",
+  "Animaciones",
+  "Ecommerce",
+  "Next.js",
+  "React.js",
+];
 ---
 
 <div>
   <Carousel>
-    <span>icono y nombre</span>
-    <span>icono y nombre</span>
-    <span>icono y nombre</span>
-    <span>icono y nombre</span>
-    <span>icono y nombre</span>
+    {
+      // Duplicamos los elementos para lograr el efecto infinito
+      Array.from({ length: 1 }).map(() =>
+        badges.map((badge) => (
+          <li class="py-1.5 px-4 basis-[5em] text-nowrap rounded-full text-xs bg-brand-fifth border border-brand-fifth-dark text-center font-medium">
+            {badge}
+          </li>
+        ))
+      )
+    }
   </Carousel>
 </div>
