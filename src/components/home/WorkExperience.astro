@@ -1,37 +1,53 @@
 ---
+import H2Typography from "../ui/H2Typography.astro";
 import ArrowRight from "../ui/icons/ArrowRight.astro";
+import Separator from "../ui/Separator.astro";
+
+const experiences = [
+  {
+    title: "Desarrollador fullstack - Fullcircle S.L",
+    date: "Jul 01, 2025 • actualidad",
+    description: "",
+    href: "https://fullcircle.es/",
+  },
+  {
+    title: "Desarrollador fullstack - Recomiend.app S.L",
+    date: "Mayo • Julio, 2024",
+    description: "",
+    href: "https://recomiend.app/",
+  },
+];
 ---
 
-<div>
-  <div class="flex flex-row justify-between">
-    <h3>Experiencia de trabajo</h3>
-    <a href="/">Ver todos</a>
+<div class="space-y-6">
+  <div class="flex flex-row items-center gap-4">
+    <H2Typography>Experiencia de trabajo</H2Typography>
+    <Separator />
   </div>
 
   <section>
-    <article class="flex flex-row justify-between">
-      <div class="flex flex-col gap-0.5">
-        <p>Desarrollador fullstack - Fullcircle S.L</p>
-        <span class="flex flex-row gap-4 text-gray-second text-sm">
-          Jul 01, 2025 • actualidad
-        </span>
-      </div>
-      <div class="h-full">
-        <div class="p-2 rounded-full border border-white w-fit">
-          <a href="/">
-            <ArrowRight />
-          </a>
-        </div>
-      </div>
-    </article>
-    <hr />
+    {
+      experiences.map((experience) => (
+        <>
+          <article class="flex flex-row justify-between">
+            <div class="flex flex-col gap-0.5">
+              <p>{experience.title}</p>
+              <span class="flex flex-row gap-4 text-gray-second text-sm">
+                {experience.date}
+              </span>
+            </div>
+
+            <a
+              class="shrink-0 relative cursor-pointer p-2 rounded-full border size-10 border-white/20 hover:scale-90 transform hover:-rotate-45 transition-all"
+              target="_blank"
+              href={experience.href}
+            >
+              <ArrowRight class="absolute top-1/2 left-1/2 transform -translate-1/2" />
+            </a>
+          </article>
+          <Separator class="my-4" />
+        </>
+      ))
+    }
   </section>
 </div>
-
-<style>
-  hr {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 24px 0px;
-  }
-</style>
