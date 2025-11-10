@@ -1,50 +1,59 @@
 ---
-import TVIcon from "../ui/icons/TVIcon.astro";
+import H2Typography from "@/components/ui/H2Typography.astro";
+import H3Typography from "@/components/ui/H3Typography.astro";
+import TVIcon from "@/components/ui/icons/TVIcon.astro";
+import CubeIcon from "@/components/ui/icons/CubeIcon.astro";
+import PaintBrushIcon from "@/components/ui/icons/PaintBrushIcon.astro";
+import WrenchIcon from "@/components/ui/icons/WrenchIcon.astro";
+import Separator from "@/components/ui/Separator.astro";
 
 const whatIDo = [
   {
     icon: TVIcon,
-    title: "Maqueto Webs",
+    title: "Desarrollo Front-End",
     description:
-      "Mejoro la estética y funcionalidad de tu web, consiguiendo másconversiones.",
+      "Transformo diseños en experiencias web rápidas, accesibles y modernas, utilizando tecnologías como Astro, React y Tailwind.",
   },
   {
-    icon: TVIcon,
-    title: "Maqueto Webs",
+    icon: WrenchIcon,
+    title: "Optimización de Rendimiento",
     description:
-      "Mejoro la estética y funcionalidad de tu web, consiguiendo másconversiones.",
+      "Me aseguro de que tu sitio cargue en milisegundos y funcione de forma fluida en cualquier dispositivo o navegador.",
   },
   {
-    icon: TVIcon,
-    title: "Maqueto Webs",
+    icon: PaintBrushIcon,
+    title: "Diseño y Maquetación Web",
     description:
-      "Mejoro la estética y funcionalidad de tu web, consiguiendo másconversiones.",
+      "Creo interfaces atractivas, bien estructuradas y fieles al diseño, garantizando coherencia visual y una experiencia de usuario impecable.",
   },
   {
-    icon: TVIcon,
-    title: "Maqueto Webs",
+    icon: CubeIcon,
+    title: "Integraciones y Componentes UI",
     description:
-      "Mejoro la estética y funcionalidad de tu web, consiguiendo másconversiones.",
+      "Desarrollo componentes reutilizables y conecto tu web con APIs o servicios externos para potenciar su funcionalidad.",
   },
 ];
 ---
 
-<div>
-  <h2>¿Qué hago?</h2>
-  <section>
+<div class="space-y-10">
+  <div class="flex flex-row gap-8 items-center">
+    <H2Typography>Qué hago</H2Typography>
+    <Separator />
+  </div>
+  <section class="grid grid-cols-1 gap-4 md:grid-cols-2">
     {
       whatIDo.map((item) => {
         const CustomIcon = item.icon;
         return (
-          <article class="p-2 rounded-2xl border-[#171717] border">
-            <div class="w-full bg-[#171717] p-6 rounded-lg">
-              <div class="rounded-full bg-black p-4 w-fit m-auto">
+          <article class="p-2 rounded-2xl border-brand-fifth-light border">
+            <div class="w-full bg-brand-fifth-light p-6 rounded-lg">
+              <div class="rounded-full bg-brand-fifth-light p-4 w-fit m-auto">
                 <CustomIcon />
               </div>
             </div>
 
             <div class="p-6 flex flex-col gap-2">
-              <h3 class="text-center">{item.title}</h3>
+              <H3Typography>{item.title}</H3Typography>
               <p class="text-center text-gray-second">{item.description}</p>
             </div>
           </article>
