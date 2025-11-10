@@ -1,40 +1,58 @@
 ---
 import Badge from "../ui/Badge.astro";
+import Separator from "../ui/Separator.astro";
+import H2Typography from "../ui/H2Typography.astro";
 
 const projects = [
   {
     imgUrl: "/show-case-1.avif",
-    alt: "Imagen del proyecto examio",
-    title: "Examio",
-    description: "Practica tu examen con IA.",
-    badgeTitle: "Free",
-  },
-  {
-    imgUrl: "/show-case-2.avif",
     alt: "Imagen del proyecto de Plazoria Mall",
     title: "Plazoriamall",
     description: "Tienda online.",
     badgeTitle: "Free",
   },
+  {
+    imgUrl: "/projects/examio-home.avif",
+    alt: "Imagen del proyecto examio",
+    title: "Examio",
+    description: "Practica tu examen con IA.",
+    badgeTitle: "Free",
+  },
 ];
 ---
 
-<div>
-  <div class="flex flex-row justify-between">
-    <h2>Proyectos</h2>
-    <a href="/">Ver todos</a>
+<div class="space-y-6">
+  <div class="flex flex-row gap-6 items-center">
+    <H2Typography>Proyectos</H2Typography>
+    <Separator />
+    {
+      projects.length > 3 && (
+        <a class="text-brand" href="/projects">
+          Ver todos
+        </a>
+      )
+    }
   </div>
 
-  <section class="grid grid-cols-2 gap-4">
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {
       projects.map((project) => (
         <article class="flex flex-col gap-4">
-          <img class="rounded-2xl" src={project.imgUrl} alt={project.alt} />
-          <div>
-            <span class="text-2xl">{project.title}</span>
-            <p class="text-gray-second text-md">{project.description}</p>
+          <img
+            class="rounded-2xl hover:opacity-70 transition-opacity duration-700"
+            src={project.imgUrl}
+            alt={project.alt}
+          />
+
+          <div class="flex flex-row gap-8">
+            <div class="flex-1 gap-2">
+              <span class="text-xl">{project.title}</span>
+              <p class="text-gray-second text-md w-full max-w-[250px] shrink line-clamp-1">
+                {project.description}
+              </p>
+            </div>
+            <Badge title={project.badgeTitle} />
           </div>
-          <Badge title={project.badgeTitle} />
         </article>
       ))
     }
