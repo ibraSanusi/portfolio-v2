@@ -1,33 +1,42 @@
 ---
+import H2Typography from "../ui/H2Typography.astro";
 import StarIcon from "../ui/icons/StarIcon.astro";
+
+const testimonials = [
+  {
+    description: `“Trabajar con Ibra ha sido clave para mejorar la visibilidad de mi tienda online. Optimizó todo el SEO y la configuración de nuestro sitio en PlazoriaMall, lo que nos ayudó a posicionarnos mejor y aumentar las ventas. Además, siempre estuvo atento a los detalles y fue muy profesional durante todo el proceso.”`,
+    avatarUrl: "/avatar.avif",
+    userName: "María Herrera",
+    craft: "Fundadora de PlazoriaMall",
+  },
+];
 ---
 
-<div>
-  <h3>Testimonios</h3>
-  <section>
-    <article class="p-10 space-y-4 bg-[#171717] rounded-2xl">
-      <div class="flex flex-row text-brand">
-        <StarIcon class="size-4" />
-        <StarIcon class="size-4" />
-        <StarIcon class="size-4" />
-        <StarIcon class="size-4" />
-        <StarIcon class="size-4" />
-      </div>
-      <p class="text-white/75">
-        “Alex made the design process smooth and exciting. Their unique approach
-        and dedication resulted in a polished and cohesive brand aesthetic.”
-      </p>
-      <div class="flex flex-row gap-4 items-center">
-        <img
-          class="rounded-full size-12"
-          src="/avatar.avif"
-          alt="Avatar de un usuario real"
-        />
-        <div class="flex flex-col">
-          <span>María P.</span>
-          <span class="text-sm text-gray-second">Emprendedora</span>
-        </div>
-      </div>
-    </article>
+<div class="space-y-6">
+  <H2Typography>Testimonios</H2Typography>
+  <section class="space-y-4">
+    {
+      testimonials.map((testimonial) => (
+        <article class="p-10 space-y-4 bg-brand-fifth-light rounded-2xl">
+          <div class="flex flex-row text-brand">
+            {Array.from({ length: 5 }).map(() => (
+              <StarIcon class="size-4" />
+            ))}
+          </div>
+          <p class="text-white/75">{testimonial.description}</p>
+          <div class="flex flex-row gap-4 items-center">
+            <img
+              class="rounded-full size-12"
+              src={testimonial.avatarUrl}
+              alt="Avatar de un usuario real"
+            />
+            <div class="flex flex-col">
+              <span>{testimonial.userName}</span>
+              <span class="text-sm text-gray-second">{testimonial.craft}</span>
+            </div>
+          </div>
+        </article>
+      ))
+    }
   </section>
 </div>
