@@ -1,9 +1,30 @@
 ---
+import Button from "../ui/Button.astro";
 import Carousel from "../ui/Carousel.astro";
+
+const badges = [
+  "Diseño Web",
+  "SEO",
+  "Animaciones",
+  "Ecommerce",
+  "Next.js",
+  "React.js",
+];
 ---
 
-<section class="w-full max-w-4xl flex flex-col gap-6 m-auto">
-  <Carousel />
+<section class="w-full flex flex-col gap-6 mx-auto">
+  <Carousel>
+    {
+      // Duplicamos los elementos para lograr el efecto infinito
+      Array.from({ length: 1 }).map(() =>
+        badges.map((badge) => (
+          <li class="py-1.5 px-4 basis-[5em] text-nowrap rounded-full text-xs bg-brand-fifth border border-brand-fifth-dark text-center font-medium">
+            {badge}
+          </li>
+        ))
+      )
+    }
+  </Carousel>
   <h1 class="text-brand-secondary text-5xl text-center">
     Soy Ibrahim, <br />
     <span class="text-white">Desarrollador Web.</span>
@@ -13,9 +34,7 @@ import Carousel from "../ui/Carousel.astro";
   </p>
 
   <div class="flex flex-row gap-4 m-auto">
-    <button class="rounded-2xl py-4 px-10 bg-brand text-black"
-      >Proyectos
-    </button>
-    <button class="rounded-2xl py-4 px-8 bg-gray">Contrátame </button>
+    <Button>Proyectos</Button>
+    <Button variants="secondary">Hablemos de tu proyecto</Button>
   </div>
 </section>
