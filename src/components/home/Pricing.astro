@@ -1,43 +1,62 @@
 ---
+import Button from "../ui/Button.astro";
+import H2Typography from "../ui/H2Typography.astro";
 import CheckIcon from "../ui/icons/CheckIcon.astro";
 
 const prices = [
   {
     title: "Por proyecto",
-    description: "Para el cliente que está buscando una One Page",
+    description:
+      "Ideal para clientes que buscan una landing o sitio web completo sin pagos mensuales.",
     price: {
-      amount: 70,
+      amount: 250,
       per: "proyecto",
     },
-    checks: ["Una sola inversion", "Total propiedad", "Hasta revisiones"],
+    checks: [
+      "Entrega llave en mano",
+      "Diseño y desarrollo incluidos",
+      "Hasta 2 revisiones",
+      "Soporte post-lanzamiento (7 días)",
+    ],
   },
   {
-    title: "Por proyecto",
-    description: "Para el cliente que está buscando una One Page",
+    title: "Por hora",
+    description:
+      "Perfecto para tareas específicas, correcciones o soporte técnico puntual.",
     price: {
-      amount: 70,
-      per: "proyecto",
+      amount: 25,
+      per: "hora",
     },
-    checks: ["Una sola inversion", "Total propiedad", "Hasta revisiones"],
+    checks: [
+      "Flexibilidad total",
+      "Ideal para mantenimiento o mejoras",
+      "Reporte de horas trabajado",
+    ],
   },
   {
-    title: "Por proyecto",
-    description: "Para el cliente que está buscando una One Page",
+    title: "Mantenimiento mensual",
+    description:
+      "Para empresas o proyectos que necesitan mejoras y actualizaciones constantes.",
     price: {
-      amount: 70,
-      per: "proyecto",
+      amount: 80,
+      per: "mes",
     },
-    checks: ["Una sola inversion", "Total propiedad", "Hasta revisiones"],
+    checks: [
+      "Actualizaciones y seguridad",
+      "Optimización continua",
+      "Prioridad en soporte",
+      "Hasta 4 cambios al mes",
+    ],
   },
 ];
 ---
 
-<div>
-  <h3>Precios</h3>
-  <section>
+<div class="space-y-6">
+  <H2Typography>Precios</H2Typography>
+  <section class="gap-4 grid grid-cols-1 md:grid-cols-2">
     {
       prices.map((item) => (
-        <article class="rounded-2xl space-y-4 p-10 border border-[#171717]">
+        <article class="rounded-2xl space-y-4 p-10 border-8 border-brand-fifth-light">
           <div class="space-y-1">
             <h4>{item.title}</h4>
             <p class="text-gray-second text-sm">{item.description}</p>
@@ -50,9 +69,9 @@ const prices = [
             </span>
           </div>
 
-          <button class="w-full rounded-2xl bg-brand text-black p-4">
-            Agenda una llamada
-          </button>
+          <Button class="rounded-2xl py-4 px-10 w-full bg-brand text-black self-center">
+            Hablemos de tu proyecto
+          </Button>
 
           <ul>
             {item.checks.map((check) => (
