@@ -1,13 +1,17 @@
 ---
 import Carousel from "../ui/Carousel.astro";
 
-const badges = [
-  "Diseño Web",
-  "SEO",
-  "Animaciones",
-  "Ecommerce",
+const tecnologies = [
+  "Javascript",
+  "HTML5",
+  "CSS",
+  "TypeScript",
+  "PostgresSql",
+  "Node.js",
+  "Express.js",
   "Next.js",
   "React.js",
+  "CSS Animations",
 ];
 ---
 
@@ -16,9 +20,9 @@ const badges = [
     {
       // Duplicamos los elementos para lograr el efecto infinito
       Array.from({ length: 1 }).map(() =>
-        badges.map((badge) => (
+        tecnologies.map((tecnologie) => (
           <li class="py-1.5 px-4 basis-[5em] text-nowrap rounded-full text-xs bg-brand-fifth border border-brand-fifth-dark text-center font-medium">
-            {badge}
+            {tecnologie}
           </li>
         ))
       )
