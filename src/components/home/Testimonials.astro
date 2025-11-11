@@ -1,11 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import H2Typography from "../ui/H2Typography.astro";
 import StarIcon from "../ui/icons/StarIcon.astro";
+import avart from "public/avatar.avif";
 
 const testimonials = [
   {
     description: `“Trabajar con Ibra ha sido clave para mejorar la visibilidad de mi tienda online. Optimizó todo el SEO y la configuración de nuestro sitio en PlazoriaMall, lo que nos ayudó a posicionarnos mejor y aumentar las ventas. Además, siempre estuvo atento a los detalles y fue muy profesional durante todo el proceso.”`,
-    avatarUrl: "/avatar.avif",
+    avatarUrl: avart,
     userName: "María Herrera",
     craft: "Fundadora de PlazoriaMall",
   },
@@ -25,10 +27,14 @@ const testimonials = [
           </div>
           <p class="text-white/75">{testimonial.description}</p>
           <div class="flex flex-row gap-4 items-center">
-            <img
+            <Image
               class="rounded-full size-12"
               src={testimonial.avatarUrl}
               alt="Avatar de un usuario real"
+              widths={[48, 96, 144]}
+              sizes="48px"
+              format="avif"
+              loading="lazy"
             />
             <div class="flex flex-col">
               <span>{testimonial.userName}</span>
