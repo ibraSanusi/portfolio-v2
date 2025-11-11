@@ -5,8 +5,9 @@ const { variants = "primary", class: className } = Astro.props;
 <button
   class:list={[
     {
-      "rounded-2xl py-4 px-10 bg-brand text-black": variants === "primary",
-      "rounded-2xl py-4 px-8 bg-gray": variants === "secondary",
+      "rounded-2xl py-4 px-4 sm:px-8 bg-brand text-black":
+        variants === "primary",
+      "rounded-2xl py-4 px-4 sm:px-8 bg-gray": variants === "secondary",
     },
     "overflow-y-hidden h-14 group",
     className,
