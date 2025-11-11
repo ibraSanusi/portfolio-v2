@@ -5,19 +5,26 @@ import H2Typography from "../ui/H2Typography.astro";
 
 const projects = [
   {
-    imgUrl: "/show-case-1.avif",
+    imgUrl: "/projects/plazoriamall.avif",
     alt: "Imagen del proyecto de Plazoria Mall",
     title: "Plazoriamall",
     description: "Tienda online.",
-    badgeTitle: "Free",
+    badgeTitle: "Freelance",
   },
   {
     imgUrl: "/projects/examio-home.avif",
     alt: "Imagen del proyecto examio",
     title: "Examio",
     description: "Practica tu examen con IA.",
-    badgeTitle: "Free",
+    badgeTitle: "Personal",
   },
+  // {
+  //   imgUrl: "/projects/recomiendapp.avif",
+  //   alt: "Imagen proyecto de photoscore de Recomiend.app",
+  //   title: "Photo Score",
+  //   description: "Mejora de foto de perfil con IA.",
+  //   badgeTitle: "Profesional",
+  // },
 ];
 ---
 
@@ -25,13 +32,8 @@ const projects = [
   <div class="flex flex-row gap-6 items-center">
     <H2Typography>Proyectos</H2Typography>
     <Separator />
-    {
-      projects.length > 3 && (
-        <a class="text-brand" href="/projects">
-          Ver todos
-        </a>
-      )
-    }
+
+    <a class="text-brand" href="/projects"> Ver todos </a>
   </div>
 
   <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
