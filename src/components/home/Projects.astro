@@ -2,17 +2,20 @@
 import Badge from "../ui/Badge.astro";
 import Separator from "../ui/Separator.astro";
 import H2Typography from "../ui/H2Typography.astro";
+import { Image } from "astro:assets";
+import plazoriamall from "public/projects/plazoriamall.avif";
+import examioHome from "public/projects/examio-home.avif";
 
 const projects = [
   {
-    imgUrl: "/projects/plazoriamall.avif",
+    imgUrl: plazoriamall,
     alt: "Imagen del proyecto de Plazoria Mall",
     title: "Plazoriamall",
     description: "Tienda online.",
     badgeTitle: "Freelance",
   },
   {
-    imgUrl: "/projects/examio-home.avif",
+    imgUrl: examioHome,
     alt: "Imagen del proyecto examio",
     title: "Examio",
     description: "Practica tu examen con IA.",
@@ -40,10 +43,14 @@ const projects = [
     {
       projects.map((project) => (
         <article class="flex flex-col gap-4">
-          <img
+          <Image
+            widths={[480, 760, 1200]}
+            sizes="(max-width: 768px) 100vw, 760px"
             class="rounded-2xl hover:opacity-70 transition-opacity duration-700"
             src={project.imgUrl}
             alt={project.alt}
+            loading="lazy"
+            format="avif"
           />
 
           <div class="flex flex-row gap-8">
