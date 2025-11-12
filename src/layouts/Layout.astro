@@ -27,9 +27,7 @@ import "../styles/global.css";
   </head>
   <body>
     <Header />
-    <main class="space-y-16 max-w-4xl m-auto">
-      <slot />
-    </main>
+    <slot />
     <Footer />
   </body>
 </html>
@@ -43,9 +41,5 @@ import "../styles/global.css";
     color: #ffffff;
     overflow-x: hidden;
     position: relative;
-  }
-
-  main {
-    padding: 170px 16px 40px 16px;
   }
 </style>

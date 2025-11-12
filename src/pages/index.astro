@@ -11,12 +11,20 @@ import Technologies from "@/components/home/Technologies.astro";
 ---
 
 <Layout>
-  <Hero />
-  <Projects />
-  <WhatIDo />
-  <Technologies />
-  <WorkExperience />
-  <Testimonials />
-  <Pricing />
-  <CTA />
+  <main class="space-y-16 max-w-4xl m-auto">
+    <Hero />
+    <Projects />
+    <WhatIDo />
+    <Technologies />
+    <WorkExperience />
+    <Testimonials />
+    <Pricing />
+    <CTA />
+  </main>
 </Layout>
+
+<style>
+  main {
+    padding: 170px 16px 40px 16px;
+  }
+</style>
