@@ -1,0 +1,26 @@
+---
+import Button from "@/components/ui/Button.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="space-y-16 max-w-4xl m-auto">
+    <div class="w-full mx-auto max-w-xl flex flex-col items-center gap-4">
+      <h1 class="text-5xl md:text-7xl md:text-nowrap text-pretty text-center">
+        Página no encontrada
+      </h1>
+      <p class="text-center">
+        He buscado por todas partes, pero no he encontrado lo que buscas. Vamos
+        a buscar un lugar mejor para ti.
+      </p>
+
+      <Button>Volver a Inicio</Button>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    padding: 240px 16px 160px;
+  }
+</style>
