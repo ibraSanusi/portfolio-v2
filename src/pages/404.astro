@@ -1,5 +1,4 @@
 ---
-import Button from "@/components/ui/Button.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -14,7 +13,11 @@ import Layout from "@/layouts/Layout.astro";
         a buscar un lugar mejor para ti.
       </p>
 
-      <Button>Volver a Inicio</Button>
+      <a
+        href="/"
+        class="hover:scale-95 transition-transform rounded-2xl py-4 px-4 sm:px-8 bg-brand text-black overflow-y-hidden h-14 group"
+        >Volver a Inicio</a
+      >
     </div>
   </main>
 </Layout>
