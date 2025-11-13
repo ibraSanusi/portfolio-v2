@@ -1,0 +1,86 @@
+---
+import Button from "@/components/ui/Button.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="space-y-16 max-w-4xl m-auto p-[170px_16px_40px_16px]">
+    <div class="space-y-4">
+      <h1
+        class="py-1.5 px-4 rounded-full text-xs bg-brand-fifth border border-brand-fifth-dark text-center w-fit mx-auto"
+      >
+        Contacto
+      </h1>
+      <p class="text-brand-secondary text-5xl text-center">
+        Alguna pregunta, <br />
+        <span class="text-white">Soy todo oídos.</span>
+      </p>
+    </div>
+
+    <article
+      class="rounded-2xl space-y-1 p-6 border-8 border-brand-fifth-light w-fit mx-auto"
+    >
+      <h2 class="text-sm text-gray-second">Contact details</h2>
+      <span>ibra.sanusi.ayo@gmail.com</span>
+    </article>
+
+    <form
+      id="form"
+      class="rounded-2xl space-y-4 p-6 border-8 border-brand-fifth-light"
+      action=""
+    >
+      <h2 class="text-brand-secondary text-2xl md:text-3xl">
+        Contrate al mejor, <br />
+        <span class="text-white">Desarrollador Web.</span>
+      </h2>
+
+      <div class="flex flex-col gap-4">
+        <label class="text-sm" for="fullname">Nombre</label>
+        <input
+          class="bg-brand-fifth-light rounded-lg p-4 focus-visible:ring-0 focus-visible:outline-none focus-visible:border-none"
+          placeholder="Jane Smith"
+          name="fullname"
+          id="fullname"
+          type="text"
+        />
+      </div>
+      <div class="flex flex-col gap-4">
+        <label class="text-sm" for="email">Email</label>
+        <input
+          placeholder="jane@developer.com"
+          class="bg-brand-fifth-light rounded-lg p-4"
+          name="email"
+          id="email"
+          type="text"
+        />
+      </div>
+      <div class="flex flex-col gap-4">
+        <label class="text-sm" for="comment">Comentario</label>
+        <textarea
+          placeholder="Si tiene algo que comentar adelante"
+          class="bg-brand-fifth-light rounded-lg p-4"
+          rows="3"
+          name="comment"
+          id="comment"></textarea>
+      </div>
+
+      <Button type="submit" class:list={"w-full"}>Enviar formulario </Button>
+    </form>
+  </main>
+</Layout>
+
+<script>
+  import { addEmail } from "@/lib/supabase";
+
+  addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form") as HTMLFormElement;
+
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      addEmail(formData);
+    });
+  });
+</script>
