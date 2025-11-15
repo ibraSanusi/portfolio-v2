@@ -3,16 +3,19 @@ interface Props {
   variants?: "primary" | "secondary";
   class?: string;
   type?: "button" | "submit" | "reset";
+  id?: string;
 }
 
 const {
   variants = "primary",
   class: className,
   type = "button",
+  id,
 } = Astro.props as Props;
 ---
 
 <button
+  id={id}
   type={type}
   class:list={[
     {
