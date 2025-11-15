@@ -11,7 +11,8 @@ import Technologies from "@/components/home/Technologies.astro";
 ---
 
 <Layout>
-  <main class="space-y-16 max-w-4xl m-auto">
+  <!-- <div id="observer-overlay"></div> -->
+  <main id="#scrollArea" class="space-y-16 max-w-4xl m-auto">
     <Hero />
     <Projects />
     <WhatIDo />
@@ -27,4 +28,54 @@ import Technologies from "@/components/home/Technologies.astro";
   main {
     padding: 170px 16px 40px 16px;
   }
+
+  #observer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    box-sizing: border-box;
+    border-top: 50px solid rgba(255, 0, 0, 0.3); /* rootMargin top */
+    border-bottom: 50px solid rgba(0, 0, 255, 0.3); /* rootMargin bottom */
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const callback: IntersectionObserverCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        const headerItem = document.getElementById(`header-${entry.target.id}`);
+
+        if (!headerItem) return;
+
+        if (entry.isIntersecting) {
+          headerItem?.classList.add("active");
+        } else {
+          headerItem.classList.remove("active");
+        }
+      });
+    };
+
+    const options = {
+      root: document.querySelector("#scrollArea"),
+      rootMargin: "0px 0px -25% 0px", // ajusta según altura del header
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    const home = document.getElementById("home");
+    const projects = document.getElementById("projects");
+    const pricing = document.getElementById("pricing");
+
+    console.log(home, projects, pricing);
+
+    if (!projects || !pricing || !home) return;
+
+    observer.observe(home);
+    observer.observe(projects);
+    observer.observe(pricing);
+  });
+</script>
