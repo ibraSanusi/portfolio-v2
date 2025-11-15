@@ -1,15 +1,26 @@
 ---
-const { variants = "primary", class: className } = Astro.props;
+interface Props {
+  variants?: "primary" | "secondary";
+  class?: string;
+  type?: "button" | "submit" | "reset";
+}
+
+const {
+  variants = "primary",
+  class: className,
+  type = "button",
+} = Astro.props as Props;
 ---
 
 <button
+  type={type}
   class:list={[
     {
       "rounded-2xl py-4 px-4 sm:px-8 bg-brand text-black":
         variants === "primary",
       "rounded-2xl py-4 px-4 sm:px-8 bg-gray": variants === "secondary",
     },
-    "overflow-y-hidden h-14 group",
+    "overflow-y-hidden h-14 group cursor-pointer",
     className,
   ]}
 >
