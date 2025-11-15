@@ -1,6 +1,7 @@
 ---
 import Button from "../ui/Button.astro";
 import Carousel from "../ui/Carousel.astro";
+import Link from "../ui/Link.astro";
 
 const badges = [
   "Diseño Web",
@@ -34,7 +35,7 @@ const badges = [
   </p>
 
   <div class="flex flex-row gap-4 m-auto">
-    <Button>Proyectos</Button>
-    <Button variants="secondary">Hablémos de tu proyecto</Button>
+    <Link href="/#pricing">Precios</Link>
+    <Link variants="secondary" href="/contact">Hablémos de tu proyecto</Link>
   </div>
 </section>
