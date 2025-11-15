@@ -21,6 +21,7 @@ export async function POST({ request }: { request: Request }) {
   const { error } = await createLead(formData);
 
   if (error) {
+    console.error("Endpoint error:", error);
     return new Response(JSON.stringify({ error }), { status: 500 });
   }
 
