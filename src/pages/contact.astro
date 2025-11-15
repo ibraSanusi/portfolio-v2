@@ -64,7 +64,9 @@ import Layout from "@/layouts/Layout.astro";
           id="comment"></textarea>
       </div>
 
-      <Button type="submit" class:list={"w-full"}>Enviar formulario</Button>
+      <Button id="submitButton" type="submit" class:list={"w-full"}
+        >Enviar formulario</Button
+      >
     </form>
   </main>
 </Layout>
@@ -80,12 +82,24 @@ import Layout from "@/layouts/Layout.astro";
 
       const origin = window.location.origin;
 
+      const submitButton = document.getElementById("submitButton");
+
+      // pending button
+      submitButton.innerText = "Enviando...";
+
       const response = await fetch(`${origin}/api/subscribe.json`, {
         method: "POST",
         body: formData,
       });
 
+      // canceling pending
+      submitButton.innerText = "Enviar formulario";
+
       console.log({ response });
+
+      if (!response.ok) return;
+
+      form.reset();
     });
   });
 </script>
