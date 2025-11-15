@@ -1,5 +1,7 @@
 import { createLead } from "@/lib/supabase";
 
+export const prerender = false; // Necesario para aceptar POST en modo estático
+
 // TODO: terminar de conectar con supabase
 export async function POST({ request }: { request: Request }) {
   const formData = await request.formData();
