@@ -64,23 +64,28 @@ import Layout from "@/layouts/Layout.astro";
           id="comment"></textarea>
       </div>
 
-      <Button type="submit" class:list={"w-full"}>Enviar formulario </Button>
+      <Button type="submit" class:list={"w-full"}>Enviar formulario</Button>
     </form>
   </main>
 </Layout>
 
-<script>
-  import { addEmail } from "@/lib/supabase";
-
+<script is:inline>
   addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("form") as HTMLFormElement;
+    const form = document.getElementById("form");
 
-    form?.addEventListener("submit", (e) => {
+    form?.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const formData = new FormData(form);
 
-      addEmail(formData);
+      const origin = window.location.origin;
+
+      const response = await fetch(`${origin}/api/subscribe.json`, {
+        method: "POST",
+        body: formData,
+      });
+
+      console.log({ response });
     });
   });
 </script>

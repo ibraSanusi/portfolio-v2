@@ -1,0 +1,28 @@
+import { createLead } from "@/lib/supabase";
+
+export const prerender = false; // Necesario para aceptar POST en modo estático
+
+// TODO: terminar de conectar con supabase
+export async function POST({ request }: { request: Request }) {
+  const formData = await request.formData();
+  const fullname = formData.get("fullname");
+  const email = formData.get("email");
+  const comment = formData.get("comment");
+
+  if (!fullname || !email) {
+    return new Response(
+      JSON.stringify({ error: "fullname y email son obligatorios" }),
+      { status: 400 }
+    );
+  }
+
+  console.log({ fullname, email, comment });
+
+  const { error } = await createLead(formData);
+
+  if (error) {
+    return new Response(JSON.stringify({ error }), { status: 500 });
+  }
+
+  return new Response(JSON.stringify({ success: true }), { status: 200 });
+}
