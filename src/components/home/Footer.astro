@@ -12,19 +12,38 @@ import UpWorkIcon from "../ui/icons/UpWorkIcon.astro";
     >
 
     <ul class="space-y-2">
-      <li class="text-white">Pages</li>
-      <li class="text-brand-secondary">Shop</li>
-      <li class="text-brand-secondary">Work</li>
-      <li class="text-brand-secondary">About</li>
-      <li class="text-brand-secondary">Contact</li>
+      <li>
+        <a href="/#home" class="text-brand-secondary hover:text-white">Inicio</a
+        >
+      </li>
+      <li>
+        <a href="/#pricing" class="text-brand-secondary hover:text-white"
+          >Precios</a
+        >
+      </li>
+      <li>
+        <a href="/#projects" class="text-brand-secondary hover:text-white"
+          >Proyectos</a
+        >
+      </li>
+      <!-- <li>
+        <a href="/about" class="text-brand-secondary hover:text-white">About</a>
+      </li> -->
+      <li>
+        <a href="/contact" class="text-brand-secondary hover:text-white"
+          >Contacto</a
+        >
+      </li>
     </ul>
 
     <!-- Social Media -->
     <div class="flex flex-row gap-6">
-      <a aria-label="Github" href="/github"
+      <a aria-label="Github" href="/https://github.com/ibraSanusi"
         ><GitHubIcon class="size-6 text-white" /></a
       >
-      <a aria-label="LinkedIn" href="/LinkedIn"
+      <a
+        aria-label="LinkedIn"
+        href="/https://www.linkedin.com/in/ibrahim-ayodeji-sanusi/"
         ><LinkedInIcon class="size-2 text-white" /></a
       >
       <a aria-label="Upwork" href="/upwork"><UpWorkIcon class="size-2" /></a>
@@ -37,5 +56,10 @@ import UpWorkIcon from "../ui/icons/UpWorkIcon.astro";
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px); /* Para Safari */
     background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1));
+  }
+
+  a:hover {
+    transform: scale(110%);
+    transition: transform 0.2s linear;
   }
 </style>
