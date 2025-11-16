@@ -2,6 +2,10 @@
 import Footer from "@/components/home/Footer.astro";
 import Header from "@/components/home/Header.astro";
 import "../styles/global.css";
+
+const {
+  title = "Desarrollador Web Freelance | Maquetación y Sitios Modernos — Ibrahim Sanusi",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -13,8 +17,7 @@ import "../styles/global.css";
     <meta name="robots" content="noindex, nofollow" />
     <meta name="generator" content={Astro.generator} />
     <title>
-      Desarrollador Web Freelance | Maquetación y Sitios Modernos — Ibrahim
-      Sanusi
+      {title}
     </title>
     <meta
       name="description"
