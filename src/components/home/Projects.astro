@@ -36,7 +36,14 @@ const projects = [
     <H2Typography>Proyectos</H2Typography>
     <Separator />
 
-    <a class="text-brand" href="/projects"> Ver todos </a>
+    {
+      projects.length > 2 && (
+        <a class="text-brand" href="/projects">
+          {" "}
+          Ver todos{" "}
+        </a>
+      )
+    }
   </div>
 
   <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
