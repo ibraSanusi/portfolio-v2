@@ -6,6 +6,7 @@ import Analytics from "@vercel/analytics/astro";
 
 const {
   title = "Desarrollador Web Freelance | Maquetación y Sitios Modernos — Ibrahim Sanusi",
+  canonical,
 } = Astro.props;
 ---
 
@@ -16,7 +17,7 @@ const {
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ibrasanusi.com/" />
+    <link rel="canonical" href={`https://ibrasanusi.com/${canonical ?? ""}`} />
     <meta name="generator" content={Astro.generator} />
     <title>
       {title}
