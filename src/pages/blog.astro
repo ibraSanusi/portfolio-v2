@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+import Layout from "@/layouts/Layout.astro";
+type BlogPost = {
+  url: string;
+  frontmatter: {
+    title: string;
+    pubDate: string | Date;
+    description?: string;
+    author?: string;
+    tags?: string[];
+  };
+};
+
+const posts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true })
+) as BlogPost[];
+---
+
+<Layout title="Blog | ibraSanusi">
+  <main class="space-y-16 max-w-4xl m-auto p-[140px_16px_40px_16px]">
+    <nav class="text-gray-second gap-2 flex justify-center">
+      <a class="hover:underline" href="/">Inicio</a>
+      <span aria-hidden="true">/</span>
+      <span
+        class="text-brand text-ellipsis overflow-hidden max-w-[20ch] md:w-auto md:w-max-[32ch] whitespace-nowrap"
+        >Blog</span
+      >
+    </nav>
+
+    <h1 class="text-4xl font-bold mb-2 text-white text-center">
+      Artículos sobre
+    </h1>
+    <p class="text-center text-gray-second">
+      Aquí es donde publico lo nuevo que he aprendido y crea que puede aprotar
+      valor
+    </p>
+
+    <ul>
+      {
+        posts.map((post) => (
+          <li class="p-4 hover:scale-[101%] transition-transform border-b border-b-white/20">
+            <a href={post.url}>
+              <div>
+                <span class="text-lg text-balance">
+                  {" "}
+                  {post.frontmatter.title}
+                </span>
+                <p class="text-brand-secondary text-sm">
+                  {post.frontmatter.description}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

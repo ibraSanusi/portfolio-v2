@@ -1,0 +1,77 @@
+---
+// src/layouts/BlogLayout.astro
+const { title, pubDate, author } = Astro.props.frontmatter;
+import "../styles/global.css";
+import Layout from "./Layout.astro";
+---
+
+<Layout title={title}>
+  <article class="max-w-3xl mx-auto space-y-6 p-[140px_16px_40px_16px]">
+    <h1 class="text-4xl md:text-6xl font-bold mb-12 text-white text-center">
+      {title}
+    </h1>
+
+    <nav class="text-gray-second gap-2 flex justify-center">
+      <a class="hover:underline" href="/">Inicio</a>
+      <span aria-hidden="true">/</span>
+      <a class="hover:underline" href="/blog/">Blog</a>
+      <span aria-hidden="true">/</span>
+      <span
+        class="text-brand text-ellipsis overflow-hidden max-w-[20ch] md:w-auto md:w-max-[32ch] whitespace-nowrap"
+        >{title}</span
+      >
+    </nav>
+    <div class="flex flex-row justify-between">
+      <span class="text-gray-second mb-6">{author}</span>
+      <span class="text-gray-second">{pubDate}</span>
+    </div>
+    <slot />
+  </article>
+</Layout>
+
+<style is:inline>
+  p {
+    color: var(--color-gray-second);
+  }
+
+  strong {
+    color: var(--color-brand);
+  }
+
+  ul,
+  ol {
+    padding-left: 1.5rem;
+  }
+
+  li {
+    list-style: disc;
+  }
+
+  /* Quitar el estilo de esta página al footer */
+  ul#footer-pages,
+  ol#footer-pages {
+    padding-left: 0px;
+  }
+  #footer-pages li {
+    list-style: none;
+  }
+
+  /* Quitar el estilo de esta página al header */
+  ul#layout-header,
+  ol#layout-header {
+    padding-left: 8px;
+  }
+  #layout-header li {
+    list-style: none;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  @media (min-width: 700px) {
+    h2 {
+      font-size: 32px;
+    }
+  }
+</style>
