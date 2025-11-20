@@ -1,0 +1,116 @@
+---
+import H2Typography from "../ui/H2Typography.astro";
+import PlusIcon from "../ui/icons/PlusIcon.astro";
+import Separator from "../ui/Separator.astro";
+
+const faqs = [
+  {
+    question: "¿Qué servicios de desarrollo web ofreces?",
+    answer:
+      "Desarrollo de sitios web a medida, tiendas online, aplicaciones web, mantenimiento y optimización de sitios existentes.",
+  },
+  {
+    question: "¿Diseñas solo sitios web o también apps y tiendas online?",
+    answer:
+      "Además de sitios web, creo aplicaciones web y tiendas online totalmente funcionales, adaptadas a las necesidades de cada cliente.",
+  },
+  {
+    question: "¿Cómo es tu proceso de trabajo?",
+    answer:
+      "Primero analizamos tus necesidades, luego diseño y prototipo, desarrollo, pruebas, y finalmente entrega y soporte.",
+  },
+  {
+    question: "¿Cuánto tiempo tardas en entregar un proyecto?",
+    answer:
+      "Depende de la complejidad: un sitio simple puede tardar 1–2 semanas; proyectos más grandes entre 4–8 semanas.",
+  },
+  {
+    question: "¿Trabajas con clientes fuera de España?",
+    answer:
+      "Sí, trabajo de forma remota con clientes de cualquier parte del mundo.",
+  },
+  {
+    question: "¿Qué tecnologías utilizas en tus proyectos?",
+    answer:
+      "HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind, Node.js, Supabase y más según el proyecto.",
+  },
+  {
+    question: "¿Ofreces mantenimiento después de lanzar un proyecto?",
+    answer:
+      "Sí, ofrezco planes de soporte y actualización para mantener tu sitio seguro y optimizado.",
+  },
+  {
+    question: "¿Cómo determinas el precio de un proyecto?",
+    answer:
+      "Cada proyecto se cotiza según los requerimientos; se puede trabajar por proyecto cerrado o por hora.",
+  },
+];
+---
+
+<div class="space-y-6">
+  <div class="flex flex-row items-center gap-4">
+    <H2Typography>Preguntas frecuentes</H2Typography>
+    <Separator />
+  </div>
+
+  <section id="faq" class="space-y-6 scroll-mt-24">
+    <ul class="flex flex-col gap-3 overflow-hidden">
+      {
+        faqs.map((faq, idx) => (
+          <li class="bg-[#1C1C1C] rounded-xl p-4 transform transition-all duration-300">
+            <button
+              id={`faq-${idx}`}
+              class="flex justify-between items-center w-full"
+            >
+              {faq.question}
+              <i class="p-2 bg-black rounded-full transition-transform duration-300">
+                <PlusIcon />
+              </i>
+            </button>
+            <div
+              id={`faq-answer-${idx}`}
+              class="max-h-0 overflow-hidden transition-[max-height] duration-300"
+            >
+              <p class="text-white/70">{faq.answer}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</div>
+
+<script>
+  const faqItems = document.querySelectorAll<HTMLButtonElement>("ul li button");
+
+  faqItems.forEach((faqItem, idx) => {
+    const answer = document.getElementById(
+      `faq-answer-${idx}`
+    ) as HTMLDivElement;
+    const icon = faqItem.querySelector("i") as HTMLElement;
+
+    faqItem.addEventListener("click", () => {
+      if (!answer) return;
+
+      // Abrir/cerrar acordeón
+      if (answer.style.maxHeight && answer.style.maxHeight !== "0px") {
+        answer.style.maxHeight = "0";
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.style.transform = "rotate(45deg)";
+      }
+    });
+  });
+</script>
+
+<style>
+  .block {
+    display: block;
+  }
+
+  .rotate-45 {
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+</style>
