@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { MAIL_PASS } from "astro:env/server";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -6,7 +7,7 @@ const transporter = nodemailer.createTransport({
   secure: false, // true for 465, false for other ports
   auth: {
     user: "ibra.sanusi.ayo@gmail.com",
-    pass: process.env.MAIL_PASS,
+    pass: MAIL_PASS,
   },
 });
 
