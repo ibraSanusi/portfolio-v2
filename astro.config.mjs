@@ -13,7 +13,7 @@ export default defineConfig({
   },
   env: {
     schema: {
-      MAIL_PASS: envField.string({ context: "server", access: "public", optional: false }),
+      MAIL_PASS: envField.string({ context: "server", access: "secret", optional: false }),
     }
   }
 });
