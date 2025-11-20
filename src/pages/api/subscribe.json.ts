@@ -1,8 +1,8 @@
+import { sendMail } from "@/lib/mailsender";
 import { createLead } from "@/lib/supabase";
 
 export const prerender = false; // Necesario para aceptar POST en modo estático
 
-// TODO: terminar de conectar con supabase
 export async function POST({ request }: { request: Request }) {
   const formData = await request.formData();
   const fullname = formData.get("fullname");
@@ -24,6 +24,8 @@ export async function POST({ request }: { request: Request }) {
     console.error("Endpoint error:", error);
     return new Response(JSON.stringify({ error }), { status: 500 });
   }
+
+  await sendMail(formData);
 
   return new Response(JSON.stringify({ success: true }), { status: 200 });
 }
