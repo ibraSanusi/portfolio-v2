@@ -1,5 +1,6 @@
 ---
 import Button from "@/components/ui/Button.astro";
+import ClipBoardIcon from "@/components/ui/icons/ClipBoardIcon.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -18,10 +19,17 @@ import Layout from "@/layouts/Layout.astro";
     </div>
 
     <article
-      class="rounded-2xl space-y-1 p-6 border-8 border-brand-fifth-light w-fit mx-auto"
+      class="rounded-2xl p-6 border-8 border-brand-fifth-light mx-auto flex justify-between items-center w-full"
     >
-      <h2 class="text-sm text-gray-second">Contact details</h2>
-      <span>ibra.sanusi.ayo@gmail.com</span>
+      <div>
+        <h2 class="text-sm text-gray-second space-y-1">Contact details</h2>
+        <span>ibra.sanusi.ayo@gmail.com</span>
+      </div>
+
+      <button
+        class="hover:text-brand text-white/70"
+        aria-label="Botón para copiar"><ClipBoardIcon /></button
+      >
     </article>
 
     <form
