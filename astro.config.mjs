@@ -12,6 +12,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  site: "https://ibrasanusi.com",
   integrations: [sitemap()],
   env: {
     schema: {
