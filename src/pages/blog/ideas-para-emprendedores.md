@@ -1,7 +1,7 @@
 ---
 title: "Cómo hago realidad las ideas de emprendedores: desarrollo web, SEO y resultados"
 pubDate: "15 de noviembre de 2025"
-description: "Soy friki del código, pero lo que realmente me mueve es resolver problemas y convertir ideas de emprendedores en proyectos que funcionan."
+excerpt: "Ayudo a emprendedores a convertir sus ideas en proyectos digitales funcionales con desarrollo web y SEO efectivo."
 author: "Ibrahim Sanusi"
 tags: ["desarrollo web", "emprendedores", "SEO", "proyectos digitales"]
 layout: "../../layouts/BlogLayout.astro"
