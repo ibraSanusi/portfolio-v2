@@ -1,0 +1,9 @@
+{
+    "redirects": [
+        {
+            "source": "/contact",
+            "destination": "/contacto",
+            "permanent": true
+        }
+    ]
+}
