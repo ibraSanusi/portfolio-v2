@@ -5,7 +5,8 @@ import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
 
 const {
-  title = "Maquetador Web Freelance Madrid — Landing Pages y Sitios Responsivos | Ibrahim Sanusi",
+  title = "Desarrollador Web Freelance Madrid — Landing Pages y Sitios Responsivos | Ibrahim Sanusi",
+  description = "Programador web especializado en frontend y maquetación. Diseño y construyo páginas de aterrizaje o landings rápidas, responsivas y optimizadas para negocios y profesionales. Portfolio, servicios y contacto.",
   canonical,
 } = Astro.props;
 ---
@@ -24,10 +25,7 @@ const {
     <title>
       {title}
     </title>
-    <meta
-      name="description"
-      content="Maquetador web freelance para landing pages responsivas, optimizadas para SEO y conversiones, con total atención a la experiencia de usuario."
-    />
+    <meta name="description" content={description} />
     <meta
       name="keywords"
       content="maquetador web freelance maquetador web landing pages desarrollador web sitios pequeños desarrollador web sitios medianos desarrollador frontend freelance maquetación web profesional web rápida y optimizada diseñador web en madrid"
