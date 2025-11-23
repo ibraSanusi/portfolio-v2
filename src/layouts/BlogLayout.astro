@@ -16,10 +16,11 @@ import Layout from "./Layout.astro";
       <span aria-hidden="true">/</span>
       <a class="hover:underline" href="/blog/">Blog</a>
       <span aria-hidden="true">/</span>
-      <span
+      <h2
         class="text-brand text-ellipsis overflow-hidden max-w-[20ch] md:w-auto md:w-max-[32ch] whitespace-nowrap"
-        >{title}</span
       >
+        {title}
+      </h2>
     </nav>
     <div class="flex flex-row justify-between">
       <span class="text-gray-second mb-6">{author}</span>
