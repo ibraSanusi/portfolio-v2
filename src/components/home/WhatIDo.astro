@@ -10,9 +10,9 @@ import Separator from "@/components/ui/Separator.astro";
 const whatIDo = [
   {
     icon: TVIcon,
-    title: "Front-End que funciona de verdad",
+    title: "Webs que funciona de verdad",
     description:
-      "Me encargo de que tu web se vea bien, cargue rápido y no dé problemas. Sin tecnologías innecesarias ni complicaciones: solo lo que tu proyecto necesita para funcionar bien y durar en el tiempo.",
+      "Me encargo de que tu página web se vea bien, cargue rápido y no dé problemas. Sin tecnologías innecesarias ni complicaciones: solo lo que tu proyecto necesita para funcionar bien y durar en el tiempo.",
   },
   {
     icon: WrenchIcon,
@@ -35,11 +35,11 @@ const whatIDo = [
 ];
 ---
 
-<div class="space-y-10">
-  <div class="flex flex-row gap-8 items-center">
-    <H2Typography>Qué hago</H2Typography>
+<section class="space-y-10">
+  <section class="flex flex-row gap-8 items-center">
+    <H2Typography>Servicios</H2Typography>
     <Separator />
-  </div>
+  </section>
   <section class="grid grid-cols-1 gap-4 md:grid-cols-2">
     {
       whatIDo.map((item) => {
@@ -61,4 +61,4 @@ const whatIDo = [
       })
     }
   </section>
-</div>
+</section>
