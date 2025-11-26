@@ -1,22 +1,24 @@
 ---
-import Button from "../ui/Button.astro";
 import H2Typography from "../ui/H2Typography.astro";
 import CheckIcon from "../ui/icons/CheckIcon.astro";
+import Link from "../ui/Link.astro";
 
 const prices = [
   {
-    title: "Por proyecto",
+    title: "Diseño web",
     description:
-      "Ideal para clientes que buscan una landing o sitio web completo sin pagos mensuales.",
+      "Ideal para clientes que buscan hacer una página web desde cero.",
     price: {
       amount: 500,
       per: "proyecto",
     },
     checks: [
-      "Entrega 100% funcional",
-      "Diseño y desarrollo incluidos",
-      "Hasta 2 revisiones",
-      "Soporte post-lanzamiento (7 días)",
+      "4 secciones responsive",
+      "Contrato el hosting y dominio",
+      "Integrado Google Analytics",
+      "Integrado con Search Console",
+      "Optimizado para el SEO",
+      "Formulario de Contacto",
     ],
   },
   {
@@ -28,10 +30,11 @@ const prices = [
       per: "mes",
     },
     checks: [
-      "Actualizaciones y seguridad",
-      "Optimización continua",
-      "Prioridad en soporte",
-      "Hasta 4 cambios al mes",
+      "Desarrollo de componentes UI",
+      "Integración con APIs",
+      "Componentes dinámicos con React.js",
+      "Animaciones profesionales con CSS",
+      "Maquetación de nuevos módulos con HTML",
     ],
   },
 ];
@@ -47,15 +50,19 @@ const prices = [
             <h3>{item.title}</h3>
             <p class="text-gray-second text-sm">{item.description}</p>
           </div>
-          {/* 
+
           <div class="flex flex-col">
             <span class="text-gray-second text-xs">Desde</span>
             <span class="text-3xl">
               {item.price.amount}€<span class="text-lg">/{item.price.per}</span>
             </span>
-          </div> */}
+          </div>
 
-          <Button class="w-full">Hablemos de tu proyecto</Button>
+          <div class="flex">
+            <Link href="/servicios" class="w-full text-center">
+              Más información
+            </Link>
+          </div>
 
           <ul>
             {item.checks.map((check) => (
