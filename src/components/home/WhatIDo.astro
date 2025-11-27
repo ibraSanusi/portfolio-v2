@@ -10,36 +10,33 @@ import Separator from "@/components/ui/Separator.astro";
 const whatIDo = [
   {
     icon: TVIcon,
-    title: "Webs que funciona de verdad",
-    description:
-      "Me encargo de que tu página web se vea bien, cargue rápido y no dé problemas. Sin tecnologías innecesarias ni complicaciones: solo lo que tu proyecto necesita para funcionar bien y durar en el tiempo.",
-  },
-  {
-    icon: WrenchIcon,
-    title: "Velocidad y rendimiento sin humo",
-    description:
-      "Consigo que tu sitio vaya ligero. Optimizo imágenes, código y estructura SEO para que Google y tus usuarios lo noten. Nada de magia: mejoras reales y medibles.",
+    title: "Página web",
+    description: "Presento tu compañía en internet con tu propia página web.",
   },
   {
     icon: PaintBrushIcon,
-    title: "Maquetación cuidada al detalle",
-    description:
-      "Si ya tienes un diseño, lo convierto en una web fiel, ordenada y agradable de usar. Si no lo tienes, te propongo una estructura clara, bonita y sin distracciones.",
+    title: "Desarrollo a medida",
+    description: "Si tu proyecto necesita ser desarrollado a medida",
   },
   {
     icon: CubeIcon,
-    title: "IComponentes y pequeñas funcionalidades",
-    description:
-      "Formularios, animaciones, sliders, secciones dinámicas… Si necesitas una pieza concreta para tu web, la construyo limpia, reutilizable y fácil de mantener.",
+    title: "Mantenimiento",
+    description: "Me encargo de tu página web y la mantengo al día.",
+  },
+  {
+    icon: WrenchIcon,
+    title: "Optimización",
+    description: "Optimizo tu página web para mejorar la velocidad de carga.",
   },
 ];
 ---
 
 <section class="space-y-10">
   <section class="flex flex-row gap-8 items-center">
-    <H2Typography>Servicios</H2Typography>
+    <H2Typography>Soluciones</H2Typography>
     <Separator />
   </section>
+
   <section class="grid grid-cols-1 gap-4 md:grid-cols-2">
     {
       whatIDo.map((item) => {
