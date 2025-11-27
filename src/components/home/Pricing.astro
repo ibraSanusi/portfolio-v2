@@ -2,6 +2,7 @@
 import H2Typography from "../ui/H2Typography.astro";
 import CheckIcon from "../ui/icons/CheckIcon.astro";
 import Link from "../ui/Link.astro";
+import Separator from "../ui/Separator.astro";
 
 const prices = [
   {
@@ -41,7 +42,11 @@ const prices = [
 ---
 
 <div id="pricing" class="space-y-6 scroll-mt-24">
-  <H2Typography>Precios</H2Typography>
+  <section class="flex flex-row gap-8 items-center">
+    <H2Typography>Precios</H2Typography>
+    <Separator />
+  </section>
+
   <section class="gap-4 grid grid-cols-1 md:grid-cols-2">
     {
       prices.map((item) => (
@@ -59,8 +64,8 @@ const prices = [
           </div>
 
           <div class="flex">
-            <Link href="/servicios" class="w-full text-center">
-              Más información
+            <Link href="/contactos" class="w-full text-center">
+              Hablémos de tu proyecto
             </Link>
           </div>
 
