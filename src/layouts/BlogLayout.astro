@@ -17,7 +17,7 @@ import Layout from "./Layout.astro";
       <a class="hover:underline" href="/blog/">Blog</a>
       <span aria-hidden="true">/</span>
       <h2
-        class="text-brand text-ellipsis overflow-hidden max-w-[20ch] md:w-auto md:w-max-[32ch] whitespace-nowrap"
+        class="text-brand text-ellipsis overflow-hidden max-w-[20ch] md:w-auto md:w-max-[32ch] whitespace-nowrap breadcrumbs"
       >
         {title}
       </h2>
@@ -68,6 +68,10 @@ import Layout from "./Layout.astro";
 
   h2 {
     font-size: 26px;
+  }
+
+  h2.breadcrumbs {
+    font-size: 16px;
   }
 
   @media (min-width: 700px) {
