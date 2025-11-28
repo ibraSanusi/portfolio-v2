@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ibrasanusi.com/sitemap.xml
+Sitemap: https://ibrasanusi.com/sitemap-0.xml
