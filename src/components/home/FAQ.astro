@@ -5,49 +5,65 @@ import Separator from "../ui/Separator.astro";
 
 const faqs = [
   {
-    question: "¿Qué servicios de desarrollo web ofreces?",
+    question: "¿Qué servicios de desarrollo web ofreces exactamente?",
     answer:
-      "Desarrollo de sitios web a medida, tiendas online, aplicaciones web, mantenimiento y optimización de sitios existentes.",
+      "Creo páginas web, landings, tiendas online, interfaces en React.js, desarrollo con Next.js, optimización SEO técnico, mantenimiento mensual y mejoras específicas para pymes y negocios locales.",
   },
   {
-    question: "¿Diseñas solo sitios web o también apps y tiendas online?",
+    question: "¿Trabajas con negocios de cualquier sector?",
     answer:
-      "Además de sitios web, creo aplicaciones web y tiendas online totalmente funcionales, adaptadas a las necesidades de cada cliente.",
+      "Sí. He trabajado con pymes, ecommerce, startups y profesionales independientes. Me adapto a cada sector y siempre diseño una solución a medida.",
+  },
+  {
+    question:
+      "¿Diseñas solamente páginas web o también tiendas online y aplicaciones?",
+    answer:
+      "Diseño y desarrollo páginas web, landings de alto rendimiento, ecommerce completos y aplicaciones web interactivas con React.js o Next.js.",
   },
   {
     question: "¿Cómo es tu proceso de trabajo?",
     answer:
-      "Primero analizamos tus necesidades, luego diseño y prototipo, desarrollo, pruebas, y finalmente entrega y soporte.",
+      "1) Reunión inicial para entender tu proyecto. 2) Propuesta y planificación. 3) Diseño y maquetación. 4) Desarrollo. 5) Optimización SEO y rendimiento. 6) Entrega + soporte opcional.",
   },
   {
-    question: "¿Cuánto tiempo tardas en entregar un proyecto?",
+    question: "¿Cuánto tardas en entregar un proyecto?",
     answer:
-      "Depende de la complejidad: un sitio simple puede tardar 1–2 semanas; proyectos más grandes entre 4–8 semanas.",
+      "Una landing suele estar lista en 5–10 días. Una web corporativa entre 1–3 semanas. Proyectos más complejos o ecommerce entre 3–6 semanas.",
+  },
+  {
+    question: "¿Ofreces SEO además del diseño web?",
+    answer:
+      "Sí. Todas mis páginas están optimizadas para velocidad, indexación, estructura SEO, etiquetas, datos estructurados y buenas prácticas con Google. También puedo ayudarte con SEO local si estás en Madrid.",
+  },
+  {
+    question: "¿Puedes trabajar si ya tengo una web y solo necesito mejoras?",
+    answer:
+      "Sí. Ofrezco servicios de mantenimiento, optimización, desarrollo de nuevos módulos, integración de APIs o migración a React o Next.js.",
   },
   {
     question: "¿Trabajas con clientes fuera de España?",
     answer:
-      "Sí, trabajo de forma remota con clientes de cualquier parte del mundo.",
+      "Sí. Aunque estoy en Madrid, trabajo con clientes de España, Latinoamérica y cualquier país gracias a reuniones online.",
   },
   {
-    question: "¿Qué tecnologías utilizas en tus proyectos?",
+    question: "¿Qué tecnologías utilizas?",
     answer:
-      "HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind, Node.js, Supabase y más según el proyecto.",
+      "HTML5, CSS, Tailwind, JavaScript, TypeScript, React.js, Next.js, Node.js, Express, Supabase, PostgreSQL y herramientas de optimización y SEO técnico.",
   },
   {
-    question: "¿Ofreces mantenimiento después de lanzar un proyecto?",
+    question: "¿Ofreces mantenimiento después del proyecto?",
     answer:
-      "Sí, ofrezco planes de soporte y actualización para mantener tu sitio seguro y optimizado.",
+      "Sí. Ofrezco planes mensuales para actualizaciones, mejoras, rendimiento, seguridad y nuevas funcionalidades.",
   },
   {
-    question: "¿Cómo determinas el precio de un proyecto?",
+    question: "¿Cómo calculas el precio de un proyecto?",
     answer:
-      "Cada proyecto se cotiza según los requerimientos; se puede trabajar por proyecto cerrado o por hora.",
+      "Depende del alcance: complejidad, número de secciones, funcionalidades y diseño. Siempre envío un presupuesto cerrado y transparente.",
   },
   {
     question: "¿Cuáles son tus horarios?",
     answer:
-      "Actualmente trabajo a jornada completa en una empresa. Mis horarios contigo serían a partir de las 18:00 y los fines de semana a la hora que acordemos.",
+      "Trabajo como desarrollador en una empresa, así que atiendo proyectos freelance a partir de las 18:00 y fines de semana, siempre con organización previa.",
   },
 ];
 ---
@@ -119,3 +135,108 @@ const faqs = [
     transition: transform 0.3s;
   }
 </style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué servicios de desarrollo web ofreces exactamente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Creo páginas web, landings, tiendas online, interfaces en React.js, desarrollo con Next.js, optimización SEO técnico, mantenimiento mensual y mejoras específicas para pymes y negocios locales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Trabajas con negocios de cualquier sector?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. He trabajado con pymes, ecommerce, startups y profesionales independientes. Me adapto a cada sector y siempre diseño una solución a medida."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Diseñas solamente páginas web o también tiendas online y aplicaciones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Diseño y desarrollo páginas web, landings de alto rendimiento, ecommerce completos y aplicaciones web interactivas con React.js o Next.js."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo es tu proceso de trabajo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1) Reunión inicial para entender tu proyecto. 2) Propuesta y planificación. 3) Diseño y maquetación. 4) Desarrollo. 5) Optimización SEO y rendimiento. 6) Entrega + soporte opcional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tardas en entregar un proyecto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una landing suele estar lista en 5–10 días. Una web corporativa entre 1–3 semanas. Proyectos más complejos o ecommerce entre 3–6 semanas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ofreces SEO además del diseño web?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Todas mis páginas están optimizadas para velocidad, indexación, estructura SEO, etiquetas, datos estructurados y buenas prácticas con Google. También puedo ayudarte con SEO local si estás en Madrid."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedes trabajar si ya tengo una web y solo necesito mejoras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ofrezco servicios de mantenimiento, optimización, desarrollo de nuevos módulos, integración de APIs o migración a React o Next.js."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Trabajas con clientes fuera de España?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Aunque estoy en Madrid, trabajo con clientes de España, Latinoamérica y cualquier país gracias a reuniones online."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué tecnologías utilizas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML5, CSS, Tailwind, JavaScript, TypeScript, React.js, Next.js, Node.js, Express, Supabase, PostgreSQL y herramientas de optimización y SEO técnico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ofreces mantenimiento después del proyecto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Ofrezco planes mensuales para actualizaciones, mejoras, rendimiento, seguridad y nuevas funcionalidades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo calculas el precio de un proyecto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende del alcance: complejidad, número de secciones, funcionalidades y diseño. Siempre envío un presupuesto cerrado y transparente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuáles son tus horarios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trabajo como desarrollador en una empresa, así que atiendo proyectos freelance a partir de las 18:00 y fines de semana, siempre con organización previa."
+        }
+      }
+    ]
+  }
+</script>
