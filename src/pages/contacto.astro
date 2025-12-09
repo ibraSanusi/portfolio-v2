@@ -1,5 +1,5 @@
 ---
-import Button from "@/components/ui/Button.astro";
+import ContactForm from "@/components/ContactForm.astro";
 import ClipBoardIcon from "@/components/ui/icons/ClipboardIcon.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
@@ -36,82 +36,16 @@ import Layout from "@/layouts/Layout.astro";
       >
     </article>
 
-    <form
-      id="form"
-      class="rounded-2xl space-y-4 p-6 border-8 border-brand-fifth-light"
-      action=""
-    >
-      <h2 class="text-brand-secondary text-2xl md:text-3xl">
-        Contrate al mejor, <br />
-        <span class="text-white">Desarrollador Web.</span>
-      </h2>
-
-      <div class="flex flex-col gap-4">
-        <label class="text-sm" for="fullname">Nombre</label>
-        <input
-          class="bg-brand-fifth-light rounded-lg p-4 focus-visible:ring-0 focus-visible:outline-none focus-visible:border-none"
-          placeholder="Jane Smith"
-          name="fullname"
-          id="fullname"
-          type="text"
-        />
-      </div>
-      <div class="flex flex-col gap-4">
-        <label class="text-sm" for="email">Email</label>
-        <input
-          placeholder="jane@developer.com"
-          class="bg-brand-fifth-light rounded-lg p-4"
-          name="email"
-          id="email"
-          type="text"
-        />
-      </div>
-      <div class="flex flex-col gap-4">
-        <label class="text-sm" for="comment">Comentario</label>
-        <textarea
-          placeholder="Si tiene algo que comentar adelante"
-          class="bg-brand-fifth-light rounded-lg p-4"
-          rows="3"
-          name="comment"
-          id="comment"></textarea>
-      </div>
-
-      <Button id="submitButton" type="submit" class:list={"w-full"}
-        >Enviar formulario</Button
-      >
-    </form>
+    <ContactForm />
   </main>
 </Layout>
 
-<script is:inline>
-  addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("form");
-
-    form?.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      const origin = window.location.origin;
-
-      const submitButton = document.getElementById("submitButton");
-
-      // pending button
-      submitButton.innerText = "Enviando...";
-
-      const response = await fetch(`${origin}/api/subscribe.json`, {
-        method: "POST",
-        body: formData,
-      });
-
-      // canceling pending
-      submitButton.innerText = "Enviar formulario";
-
-      console.log({ response });
-
-      if (!response.ok) return;
-
-      form.reset();
-    });
-  });
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto",
+    "url": "https://ibrasanusi.com/contacto",
+    "email": "ibra.sanusi.ayo@gmail.com"
+  }
 </script>
