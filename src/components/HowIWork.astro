@@ -1,0 +1,39 @@
+---
+import H2Typography from "./ui/H2Typography.astro";
+import CheckIcon from "./ui/icons/CheckIcon.astro";
+
+const bullets = [
+  "Reunión inicial",
+  "Envío del wireframe",
+  "Diseño",
+  "Desarrollo",
+  "Posicionamiento SEO inicial",
+  "Entrega y formación",
+];
+---
+
+<section class="space-y-5">
+  <H2Typography>Como trabajo</H2Typography>
+  <p class="text-white/70">
+    Como emprendedor, entiendo que tengas poco tiempo y mucho estrés y por eso
+    voy a hacer que el proceso de trabajo conmigo tenga la menor fricción
+    posible. El proceso sería:
+  </p>
+
+  <ol class="flex flex-col gap-4">
+    {
+      bullets.map((bullet, idx) => (
+        <li class="flex flex-row items-center gap-4 text-white">
+          <span class="text-brand">{idx + 1}.</span>
+          <span>{bullet}</span>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  li {
+    list-style-type: decimal !important;
+  }
+</style>

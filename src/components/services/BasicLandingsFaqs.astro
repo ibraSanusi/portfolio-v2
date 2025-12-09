@@ -1,0 +1,189 @@
+---
+import H2Typography from "../ui/H2Typography.astro";
+import PlusIcon from "../ui/icons/PlusIcon.astro";
+import Separator from "../ui/Separator.astro";
+
+const faqs = [
+  {
+    question: "¿Qué incluye la página web básica?",
+    answer:
+      "Incluye diseño responsive, hasta 5 secciones, integración con WhatsApp, SEO inicial, políticas legales, analítica web, optimización de velocidad y hosting + dominio incluidos.",
+  },
+  {
+    question: "¿Cuánto tardas en entregar la web?",
+    answer:
+      "La web básica se entrega en unos 15 días desde que me envías el contenido necesario (textos, imágenes o referencias).",
+  },
+  {
+    question: "¿Puedo editar la web por mi cuenta después?",
+    answer:
+      "Sí. Te doy una breve formación para que puedas modificar textos, imágenes y secciones sin depender de nadie.",
+  },
+  {
+    question: "¿Necesito comprar el hosting o el dominio?",
+    answer:
+      "No. Ambos están incluidos en el servicio. Me encargo de configurarlo todo por ti.",
+  },
+  {
+    question: "¿La web estará optimizada para móviles?",
+    answer:
+      "Sí, la web es 100% responsive y se adapta a móviles, tablets y cualquier tamaño de pantalla.",
+  },
+  {
+    question: "¿La web aparecerá en Google?",
+    answer:
+      "Sí. Incluye SEO técnico inicial: indexación, estructura optimizada, velocidad de carga y configuración básica para que Google pueda posicionarla desde el día uno.",
+  },
+  {
+    question: "¿Puedo ampliar la web más adelante?",
+    answer:
+      "Claro. Puedes añadir nuevas secciones, blog o incluso una tienda online cuando lo necesites. Todo se cotiza como extra.",
+  },
+  {
+    question: "¿Cómo funciona el pago?",
+    answer:
+      "El pago se realiza en 2 partes: 50% para iniciar el proyecto y 50% al finalizar, justo antes de publicar la web.",
+  },
+];
+---
+
+<div class="space-y-6">
+  <div class="flex flex-row items-center gap-4">
+    <H2Typography>Preguntas frecuentes</H2Typography>
+    <Separator />
+  </div>
+
+  <section id="faq" class="space-y-6 scroll-mt-24">
+    <ul class="flex flex-col gap-3 overflow-hidden">
+      {
+        faqs.map((faq, idx) => (
+          <li class="bg-[#1C1C1C] rounded-xl p-4 transform transition-all duration-300">
+            <button
+              id={`faq-${idx}`}
+              class="flex justify-between items-center w-full"
+            >
+              {faq.question}
+              <i class="p-2 bg-black rounded-full transition-transform duration-300">
+                <PlusIcon />
+              </i>
+            </button>
+            <div
+              id={`faq-answer-${idx}`}
+              class="max-h-0 overflow-hidden transition-[max-height] duration-300"
+            >
+              <p class="text-white/70">{faq.answer}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</div>
+
+<script>
+  const faqItems = document.querySelectorAll<HTMLButtonElement>("ul li button");
+
+  faqItems.forEach((faqItem, idx) => {
+    const answer = document.getElementById(
+      `faq-answer-${idx}`
+    ) as HTMLDivElement;
+    const icon = faqItem.querySelector("i") as HTMLElement;
+
+    faqItem.addEventListener("click", () => {
+      if (!answer) return;
+
+      // Abrir/cerrar acordeón
+      if (answer.style.maxHeight && answer.style.maxHeight !== "0px") {
+        answer.style.maxHeight = "0";
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.style.transform = "rotate(45deg)";
+      }
+    });
+  });
+</script>
+
+<style>
+  .block {
+    display: block;
+  }
+
+  .rotate-45 {
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+</style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye la página web básica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Incluye diseño responsive, hasta 5 secciones, integración con WhatsApp, SEO inicial, políticas legales, analítica web, optimización de velocidad y hosting + dominio incluidos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tardas en entregar la web?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La web básica se entrega en unos 15 días desde que me envías el contenido necesario (textos, imágenes o referencias)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo editar la web por mi cuenta después?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Te doy una breve formación para que puedas modificar textos, imágenes y secciones sin depender de nadie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito comprar el hosting o el dominio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Ambos están incluidos en el servicio. Me encargo de configurarlo todo por ti."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿La web estará optimizada para móviles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, la web es 100% responsive y se adapta a móviles, tablets y cualquier tamaño de pantalla."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿La web aparecerá en Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Incluye SEO técnico inicial: indexación, estructura optimizada, velocidad de carga y configuración básica para que Google pueda posicionarla desde el día uno."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo ampliar la web más adelante?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claro. Puedes añadir nuevas secciones, blog o incluso una tienda online cuando lo necesites. Todo se cotiza como extra."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo funciona el pago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El pago se realiza en 2 partes: 50% para iniciar el proyecto y 50% al finalizar, justo antes de publicar la web."
+        }
+      }
+    ]
+  }
+</script>

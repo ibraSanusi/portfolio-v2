@@ -1,0 +1,35 @@
+---
+import CheckIcon from "@/components/ui/icons/CheckIcon.astro";
+
+const bullets = [
+  "Tiempo de entrega: 15 días",
+  "Pago cómodo en 2 plazos",
+  "Sin mensualidades ni permanencias",
+  "Hosting y Dominio incluidos",
+  "Posicionamiento SEO inicial",
+  "Políticas de Privacidad y Cookies incluidos",
+  "Te enseño a modificar tu web sin depender de nadie.",
+];
+---
+
+<section id="home" class="w-full flex flex-col gap-6 mx-auto">
+  <span class="text-4xl text-white">Páginas webs a medida</span>
+  <h1 class="text-white/70 text-sm">
+    Diseño páginas web profesionales para pymes y autónomos que buscan convertir
+    más clientes.
+  </h1>
+
+  <span class="text-brand">* 50% de descuento para los 3 primeros clientes</span
+  >
+
+  <ul class="flex flex-col gap-4">
+    {
+      bullets.map((bullet) => (
+        <li class="flex flex-row items-center gap-4 text-white/70">
+          <CheckIcon class="size-3.5 text-brand" />
+          <span>{bullet}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

@@ -1,0 +1,26 @@
+---
+import CheckIcon from "../ui/icons/CheckIcon.astro";
+
+const bullets = [
+  "Diseño responsive",
+  "5 secciones incluidas",
+  "Integración WhatsApp",
+  "Optimización Core Web Vitals",
+  "Instalación de analítica",
+];
+---
+
+<section class="space-y-6">
+  <h2 class="text-3xl">Qué incluyen mis servicios</h2>
+
+  <ul class="flex flex-col gap-4">
+    {
+      bullets.map((bullet) => (
+        <li class="flex flex-row items-center gap-4 text-white/70">
+          <CheckIcon class="size-3.5 text-brand" />
+          <span>{bullet}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

@@ -1,0 +1,41 @@
+---
+import BasicLandingBullets from "@/components/services/BasicLandingBullets.astro";
+import ContactForm from "@/components/ContactForm.astro";
+import HowIWork from "@/components/HowIWork.astro";
+import WhatMyServicesIncludes from "@/components/services/WhatMyServicesIncludes.astro";
+import Projects from "@/components/home/Projects.astro";
+import Layout from "@/layouts/Layout.astro";
+import BasicLandingsFaqs from "@/components/services/BasicLandingsFaqs.astro";
+---
+
+<Layout
+  title="Landing básica a medida | Páginas web para pymes"
+  description="Crea tu landing page profesional en 15 días. Hosting, SEO inicial y diseño responsive incluidos. Perfecta para autónomos y pymes."
+  canonical="landings-basicas"
+>
+  <main class="p-[120px_16px_40px_16px] space-y-16 max-w-4xl m-auto">
+    <BasicLandingBullets />
+    <ContactForm />
+    <Projects />
+    <HowIWork />
+    <WhatMyServicesIncludes />
+    <BasicLandingsFaqs />
+  </main>
+</Layout>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Desarrollo Web",
+    "provider": {
+      "@type": "Person",
+      "name": "Ibrahim Sanusi"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Madrid, España"
+    },
+    "description": "Diseño y desarrollo de páginas web, landing pages y aplicaciones web para pymes y autónomos."
+  }
+</script>
