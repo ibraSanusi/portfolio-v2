@@ -42,38 +42,38 @@ import FAQ from "@/components/home/FAQ.astro";
   } */
 </style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const callback: IntersectionObserverCallback = (entries, observer) => {
-      entries.forEach((entry) => {
-        const headerItem = document.getElementById(`header-${entry.target.id}`);
-
-        if (!headerItem) return;
-
-        if (entry.isIntersecting) {
-          headerItem?.classList.add("active");
-        } else {
-          headerItem.classList.remove("active");
-        }
-      });
-    };
-
-    const options = {
-      root: document.querySelector("#scrollArea"),
-      rootMargin: "0px 0px -25% 0px", // ajusta según altura del header
-      threshold: 0.5,
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    const home = document.getElementById("home");
-    const projects = document.getElementById("projects");
-    const pricing = document.getElementById("pricing");
-
-    if (!projects || !pricing || !home) return;
-
-    observer.observe(home);
-    observer.observe(projects);
-    observer.observe(pricing);
-  });
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ibrahim Sanusi",
+    "url": "https://ibrasanusi.com",
+    // "image": "https://tu-sitio.com/tu-foto.jpg",
+    "jobTitle": "Desarrollador Web / Frontend & Fullstack",
+    "email": "mailto:ibra.sanusi.ayo@gmail.com",
+    "sameAs": [
+      "https://linkedin.com/in/ibrahim-ayodeji-sanusi",
+      "https://github.com/ibraSanusi"
+    ],
+    "knowsAbout": [
+      "Diseño Web",
+      "SEO",
+      "Animaciones CSS",
+      "Ecommerce",
+      "Next.js",
+      "React.js",
+      "HTML5",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ibrahim Sanusi Freelance",
+      "url": "https://ibrasanusi.com"
+    }
+  }
 </script>
