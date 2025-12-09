@@ -2,6 +2,7 @@
 title: "AVISO LEGAL"
 tags: ["desarrollo web", "emprendedores", "SEO", "proyectos digitales"]
 layout: "../../layouts/LegalLayout.astro"
+slug: "aviso"
 ---
 
 ## Titularidad del sitio web

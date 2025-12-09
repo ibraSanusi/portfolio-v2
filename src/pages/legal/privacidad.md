@@ -2,6 +2,7 @@
 title: "POLÍTICA DE PRIVACIDAD"
 tags: ["desarrollo web", "emprendedores", "SEO", "proyectos digitales"]
 layout: "../../layouts/LegalLayout.astro"
+slug: "privacidad"
 ---
 
 En cumplimiento del RGPD, te informo sobre el tratamiento de los datos personales recabados a través del formulario de contacto.

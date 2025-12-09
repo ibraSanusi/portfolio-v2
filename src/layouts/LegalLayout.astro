@@ -1,11 +1,11 @@
 ---
 // src/layouts/BlogLayout.astro
-const { title } = Astro.props.frontmatter;
+const { title, slug } = Astro.props.frontmatter;
 import "../styles/global.css";
 import Layout from "./Layout.astro";
 ---
 
-<Layout title={title} canonical="legal">
+<Layout title={title} canonical=`legal/${slug}`>
   <section
     class="max-w-4xl mx-auto space-y-6 p-[140px_16px_40px_16px] text-pretty"
   >
