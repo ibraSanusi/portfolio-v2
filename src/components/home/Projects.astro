@@ -5,7 +5,7 @@ import H2Typography from "../ui/H2Typography.astro";
 import { Image } from "astro:assets";
 import plazoriamall from "public/projects/plazoriamall.avif";
 import examioHome from "public/projects/examio-home.avif";
-// import recomiendapp from "public/projects/recomiendapp.avif";
+import recomiendapp from "public/projects/recomiendapp.avif";
 
 const projects = [
   {
@@ -13,7 +13,7 @@ const projects = [
     alt: "Imagen del proyecto de Plazoria Mall",
     title: "Plazoriamall",
     description: "Tienda online.",
-    badgeTitle: "Freelance",
+    badgeTitle: "Cliente",
     href: "https://www.plazoriamall.com/",
   },
   {
@@ -24,14 +24,14 @@ const projects = [
     badgeTitle: "Personal",
     href: "https://examio-ten.vercel.app/",
   },
-  // {
-  //   imgUrl: recomiendapp,
-  //   alt: "Imagen proyecto de photoscore de Recomiend.app",
-  //   title: "Photo Score",
-  //   description: "Mejora de foto de perfil con IA.",
-  //   badgeTitle: "Profesional",
-  //   href: "https://recomiend.app/analizador-foto-perfil-ia",
-  // },
+  {
+    imgUrl: recomiendapp,
+    alt: "Imagen proyecto de photoscore de Recomiend.app",
+    title: "Photo Score",
+    description: "Mejora de foto de perfil con IA.",
+    badgeTitle: "Cliente",
+    href: "https://recomiend.app/analizador-foto-perfil-ia",
+  },
 ];
 ---
 
@@ -41,8 +41,8 @@ const projects = [
     <Separator />
 
     {
-      projects.length > 2 && (
-        <a class="text-brand" href="/projects">
+      projects.length > 3 && (
+        <a class="text-brand" href="/proyectos">
           {" "}
           Ver todos{" "}
         </a>
@@ -50,16 +50,20 @@ const projects = [
     }
   </div>
 
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <section class="md:grid flex flex-row overflow-x-scroll md:grid-cols-2 gap-4">
     {
       projects.map((project) => (
-        <a target="_blank" href={project.href} class="flex flex-col gap-4">
+        <a
+          target="_blank"
+          href={project.href}
+          class="flex flex-col gap-4 grow flex-1"
+        >
           <Image
             title={project.title}
             fetchpriority="high"
             widths={[480, 760, 1200]}
             sizes="(max-width: 768px) 100vw, 760px"
-            class="rounded-2xl hover:opacity-70 transition-opacity duration-700"
+            class="rounded-2xl hover:opacity-70 transition-opacity duration-700 grow"
             src={project.imgUrl}
             alt={project.alt}
             loading="lazy"
