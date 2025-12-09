@@ -1,41 +1,42 @@
 ---
-import FolderIcon from "@/components/ui/icons/FolderIcon.astro";
 import CartIcon from "@/components/ui/icons/CartIcon.astro";
 import HomeIcon from "@/components/ui/icons/HomeIcon.astro";
 import MailIcon from "@/components/ui/icons/MailIcon.astro";
 import BookIcon from "../ui/icons/BookIcon.astro";
 ---
 
-<ul
-  id="layout-header"
-  class="flex flex-row justify-between items-center w-full max-w-72 m-auto fixed top-6 left-1/2 transform -translate-x-1/2 z-10 bg-brand-sixth p-2 rounded-full border border-brand-sixth/10"
->
-  <li id="header-home">
-    <a aria-label="Página de inicio" href="/#">
-      <HomeIcon />
-    </a>
-  </li>
-  <li id="header-projects">
-    <a aria-label="Sección de proyectos" href="/#projects">
-      <FolderIcon />
-    </a>
-  </li>
-  <li id="header-pricing">
-    <a aria-label="Sección de Precios" href="/#pricing">
-      <CartIcon />
-    </a>
-  </li>
-  <li id="header-blog">
-    <a aria-label="Página de blog" href="/blog">
-      <BookIcon />
-    </a>
-  </li>
-  <li>
-    <a aria-label="Página de contacto" href="/contacto">
-      <MailIcon />
-    </a>
-  </li>
-</ul>
+<header>
+  <ul
+    id="layout-header"
+    class="flex flex-row justify-between items-center w-full max-w-72 m-auto fixed top-6 left-1/2 transform -translate-x-1/2 z-10 bg-brand-sixth p-2 rounded-full border border-brand-sixth/10"
+  >
+    <li id="header-home">
+      <a aria-label="Página de inicio" title="Inicio" href="/">
+        <HomeIcon />
+      </a>
+    </li>
+    <li>
+      <!-- Por ahora apunta a Landings básicas pero cambiar a servicios -->
+      <a
+        aria-label="Página de servicios"
+        title="Servicios landings básicas"
+        href="/servicios/landings-basicas"
+      >
+        <CartIcon />
+      </a>
+    </li>
+    <li id="header-blog">
+      <a aria-label="Página de blog" title="Blog" href="/blog">
+        <BookIcon />
+      </a>
+    </li>
+    <li>
+      <a aria-label="Página de contacto" title="Contacto" href="/contacto">
+        <MailIcon />
+      </a>
+    </li>
+  </ul>
+</header>
 
 <style>
   ul {
@@ -54,3 +55,18 @@ import BookIcon from "../ui/icons/BookIcon.astro";
     color: white;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lists = document.getElementsByTagName("li");
+    const slug = window.location.pathname;
+
+    for (const list of lists) {
+      const link = list.querySelector("a");
+      if (!link) continue;
+      if (link.getAttribute("href") === slug) {
+        list.classList.add("active");
+      }
+    }
+  });
+</script>
