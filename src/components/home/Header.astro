@@ -1,58 +1,93 @@
 ---
-import CartIcon from "@/components/ui/icons/CartIcon.astro";
-import HomeIcon from "@/components/ui/icons/HomeIcon.astro";
-import MailIcon from "@/components/ui/icons/MailIcon.astro";
-import BookIcon from "../ui/icons/BookIcon.astro";
+import BurgerIcon from "../ui/icons/BurgerIcon.astro";
+import Button from "../ui/Button.astro";
 ---
 
 <header>
-  <ul
-    id="layout-header"
-    class="flex flex-row justify-between items-center w-full max-w-72 m-auto fixed top-6 left-1/2 transform -translate-x-1/2 z-10 bg-brand-sixth p-2 rounded-full border border-brand-sixth/10"
-  >
-    <li id="header-home">
-      <a aria-label="Página de inicio" title="Inicio" href="/">
-        <HomeIcon />
-      </a>
-    </li>
-    <li>
-      <!-- Por ahora apunta a Landings básicas pero cambiar a servicios -->
-      <a
-        aria-label="Página de servicios"
-        title="Servicios landings básicas"
-        href="/servicios/landings-basicas"
-      >
-        <CartIcon />
-      </a>
-    </li>
-    <li id="header-blog">
-      <a aria-label="Página de blog" title="Blog" href="/blog">
-        <BookIcon />
-      </a>
-    </li>
-    <li>
-      <a aria-label="Página de contacto" title="Contacto" href="/contacto">
-        <MailIcon />
-      </a>
-    </li>
-  </ul>
+  <img src="logo.png" alt="logo de ibrasanusi" />
+
+  <nav>
+    <a href="">Inicio</a>
+    <a href="">Servicios</a>
+    <a href="">Porfolio</a>
+    <a href="">Contacto</a>
+  </nav>
+
+  <div class="cta-btn">
+    <Button>Explícame tu caso</Button>
+  </div>
+
+  <div class="cta">
+    <div class="cta-btn">
+      <Button>Explícame tu caso</Button>
+    </div>
+    <button><BurgerIcon /></button>
+  </div>
 </header>
 
 <style>
-  ul {
-    backdrop-filter: blur(30px);
-    box-shadow: 0px 0px 1px rgb(255, 255, 255, 0.3);
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0px auto;
+    padding: 14px;
+    & nav {
+      display: none;
+
+      & a {
+        font-weight: 600;
+      }
+    }
+    img {
+      width: 100px;
+    }
   }
 
-  li {
-    color: var(--color-gray-second);
-    border-radius: calc(infinity * 1px);
-    padding: calc(var(--spacing) * 2);
+  .cta-btn {
+    display: none;
+  }
+
+  .cta {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+
+    & button {
+      padding: 8px 16px;
+      background-color: var(--secondary);
+      border-radius: var(--radius);
+    }
+  }
+
+  nav {
+    display: none;
   }
 
   .active {
     background-color: #2c2c2c;
     color: white;
+  }
+
+  @media (width >= 769px) {
+    header {
+      & nav {
+        display: flex;
+        flex-direction: row;
+        gap: 26px;
+      }
+
+      & .cta-btn {
+        display: block;
+      }
+    }
+
+    .cta {
+      display: none;
+    }
   }
 </style>
 
