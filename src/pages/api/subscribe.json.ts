@@ -12,7 +12,7 @@ export async function POST({ request }: { request: Request }) {
   if (!fullname || !email) {
     return new Response(
       JSON.stringify({ error: "fullname y email son obligatorios" }),
-      { status: 400 }
+      { status: 400 },
     );
   }
 
