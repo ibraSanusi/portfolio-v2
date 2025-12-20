@@ -1,45 +1,29 @@
 ---
-import Carousel from "../ui/Carousel.astro";
-import Link from "../ui/Link.astro";
-
-const badges = [
-  "Diseño Web",
-  "SEO",
-  "Animaciones",
-  "Webs personalizadas",
-  "Ecommerce",
-  "Wordpress",
-];
+import Button from "../ui/Button.astro";
 ---
 
-<section id="home" class="w-full flex flex-col gap-6 mx-auto">
-  <Carousel>
-    {
-      // Duplicamos los elementos para lograr el efecto infinito
-      Array.from({ length: 1 }).map(() =>
-        badges.map((badge) => (
-          <li class="py-1.5 px-4 basis-[5em] text-nowrap rounded-full text-xs bg-brand-fifth border border-brand-fifth-dark text-center font-medium">
-            {badge}
-          </li>
-        ))
-      )
-    }
-  </Carousel>
+<section class="flex flex-col md:flex-row space-y-8 md:items-center my-[120px]">
+  <article class="flex flex-col gap-8 md:flex-1">
+    <h1 class="text-5xl md:text-7xl">Diseñador web</h1>
+    <p class="max-w-[45ch] w-full">
+      Creo webs y herramientas que ahorran tiempo y organizan el trabajo de tu
+      negocio.
+    </p>
 
-  <p class="text-brand-secondary text-5xl text-center">
-    Soy Ibrahim, <br />
-    <span class="text-white">Desarrollador Web. </span>
-  </p>
-  <h1
-    class="text-brand-secondary text-lg text-center text-pretty max-w-[483px] self-center"
-  >
-    <span class="text-brand">Tu web, lista para vender y destacar.</span>
-    Si quieres más clientes y una presencia online que impacte, estás en el lugar
-    correcto.
-  </h1>
+    <div class="flex flex-col gap-2.5 md:flex-row md:gap-6">
+      <Button>Explícame tu caso</Button>
+      <button
+        class="py-3.5 px-6 rounded-md bg-secondary text-black font-bold min-w-[185px]"
+        >Saber más</button
+      >
+    </div>
+  </article>
 
-  <div class="flex flex-row gap-4 m-auto">
-    <Link href="/#pricing">Precios</Link>
-    <Link variants="secondary" href="/contact">Hablémos de tu proyecto</Link>
+  <div class="md:flex-1 rounded-md order-1">
+    <img
+      class="w-full rounded-md"
+      src="working-image.jpg"
+      alt="Foto de Ibrahim de perfil"
+    />
   </div>
 </section>

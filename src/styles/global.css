@@ -13,18 +13,12 @@
   --secondary: var(--alabaster-grey);
 
   --radius: 8px;
-
-  overflow-x: hidden;
-  width: 100%;
-  height: 100%;
-  position: relative;
 }
 
-/* @theme {
+@theme {
   --color-brand: var(--digital-blue);
-  --color-background: var(--white);
   --color-primary: var(--coffe-bean);
   --color-secondary: var(--alabaster-grey);
 
   --max-w-desktop: var(--max-width);
-} */
+}
