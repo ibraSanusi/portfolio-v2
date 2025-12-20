@@ -34,10 +34,22 @@ const {
       content="maquetador web freelance maquetador web landing pages desarrollador web sitios pequeños desarrollador web sitios medianos desarrollador frontend freelance maquetación web profesional web rápida y optimizada diseñador web en madrid"
     />
   </head>
-  <body class="w-full relative">
+  <body class="bg-red-200">
     <Header />
     <slot />
     <Analytics />
-    <Footer />
+    <!-- <Footer /> -->
   </body>
 </html>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body,
+  html {
+    margin: 0;
+    width: 100dvh;
+    position: relative;
+  }
+</style>

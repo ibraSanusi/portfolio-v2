@@ -3,105 +3,28 @@ import BurgerIcon from "../ui/icons/BurgerIcon.astro";
 import Button from "../ui/Button.astro";
 ---
 
-<header>
-  <img src="logo.png" alt="logo de ibrasanusi" />
+<header class="">
+  <div class="max-w-desktop mx-auto p-3.5 flex items-center justify-between">
+    <img src="logo.png" alt="logo de ibrasanusi" class="w-[100px]" />
 
-  <nav>
-    <a href="">Inicio</a>
-    <a href="">Servicios</a>
-    <a href="">Porfolio</a>
-    <a href="">Contacto</a>
-  </nav>
+    <nav class="hidden md:flex md:flex-row md:gap-[26px]">
+      <a href="" class="font-semibold">Inicio</a>
+      <a href="" class="font-semibold">Servicios</a>
+      <a href="" class="font-semibold">Porfolio</a>
+      <a href="" class="font-semibold">Contacto</a>
+    </nav>
 
-  <div class="cta-btn">
-    <Button>Explícame tu caso</Button>
-  </div>
-
-  <div class="cta">
-    <div class="cta-btn">
+    <div class="hidden md:block">
       <Button>Explícame tu caso</Button>
     </div>
-    <button><BurgerIcon /></button>
+
+    <div class="flex items-stretch gap-2 md:hidden">
+      <div>
+        <Button>Explícame tu caso</Button>
+      </div>
+      <button class="px-4 py-2 bg-secondary rounded-lg">
+        <BurgerIcon />
+      </button>
+    </div>
   </div>
 </header>
-
-<style>
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: var(--max-width);
-    width: 100%;
-    margin: 0px auto;
-    padding: 14px;
-    & nav {
-      display: none;
-
-      & a {
-        font-weight: 600;
-      }
-    }
-    img {
-      width: 100px;
-    }
-  }
-
-  .cta-btn {
-    display: none;
-  }
-
-  .cta {
-    display: flex;
-    align-items: stretch;
-    gap: 8px;
-
-    & button {
-      padding: 8px 16px;
-      background-color: var(--secondary);
-      border-radius: var(--radius);
-    }
-  }
-
-  nav {
-    display: none;
-  }
-
-  .active {
-    background-color: #2c2c2c;
-    color: white;
-  }
-
-  @media (width >= 769px) {
-    header {
-      & nav {
-        display: flex;
-        flex-direction: row;
-        gap: 26px;
-      }
-
-      & .cta-btn {
-        display: block;
-      }
-    }
-
-    .cta {
-      display: none;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const lists = document.getElementsByTagName("li");
-    const slug = window.location.pathname;
-
-    for (const list of lists) {
-      const link = list.querySelector("a");
-      if (!link) continue;
-      if (link.getAttribute("href") === slug) {
-        list.classList.add("active");
-      }
-    }
-  });
-</script>

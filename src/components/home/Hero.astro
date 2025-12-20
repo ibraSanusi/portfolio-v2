@@ -2,30 +2,32 @@
 import Button from "../ui/Button.astro";
 ---
 
-<section
-  class="flex flex-col md:flex-row h-screen space-y-8 md:items-center w-full max-w-[1440px] px-3 mx-auto md:px-28"
->
-  <article class="flex flex-col gap-8 md:flex-1">
-    <h1 class="text-5xl md:text-7xl">Diseñador web</h1>
-    <p class="max-w-[45ch] w-full">
-      Creo webs y herramientas que ahorran tiempo y organizan el trabajo de tu
-      negocio.
-    </p>
+<section class="w-screen h-screen">
+  <div
+    class="h-full flex items-center flex-col md:flex-row max-w-desktop w-full mx-auto"
+  >
+    <article class="flex flex-col gap-8 md:flex-1 w-full">
+      <h1 class="text-5xl md:text-7xl">Diseñador web</h1>
+      <p class="max-w-[45ch] w-full">
+        Creo webs y herramientas que ahorran tiempo y organizan el trabajo de tu
+        negocio.
+      </p>
 
-    <div class="flex flex-col gap-2.5 md:flex-row md:gap-6">
-      <Button>Explícame tu caso</Button>
-      <button
-        class="py-3.5 px-6 rounded-md bg-secondary text-black font-bold max-w-[210px] w-full"
-        >Saber más</button
-      >
+      <div class="flex flex-col gap-2.5 md:flex-row md:gap-6">
+        <Button>Explícame tu caso</Button>
+        <button
+          class="py-3.5 px-6 rounded-md bg-secondary text-black font-bold max-w-[210px] w-full"
+          >Saber más</button
+        >
+      </div>
+    </article>
+
+    <div class="md:flex-1 rounded-md order-1 w-full">
+      <img
+        class="w-full rounded-md"
+        src="working-image.jpg"
+        alt="Foto de Ibrahim de perfil"
+      />
     </div>
-  </article>
-
-  <div class="md:flex-1 rounded-md order-1">
-    <img
-      class="w-full rounded-md"
-      src="working-image.jpg"
-      alt="Foto de Ibrahim de perfil"
-    />
   </div>
 </section>
