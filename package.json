@@ -20,6 +20,9 @@
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
-    "@types/nodemailer": "^7.0.4"
+    "@types/nodemailer": "^7.0.4",
+    "prettier": "^3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }
