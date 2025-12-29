@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import plazoriamall from "public/projects/plazoriamall.avif";
+---
+
+<section id="projects" class="bg-ternary w-screen px-8 lg:px-24">
+  <div class="mx-auto">
+    <h2 class="mb-16">Proyecto real para clínicas dentales</h2>
+
+    <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+      {/* Texto */}
+      <div class="">
+        <h3 class="mb-4 text-2xl font-semibold">
+          Formulario inteligente para clínicas dentales
+        </h3>
+
+        <span class="mb-6 block text-lg text-slate-600">
+          El problema no es que falten pacientes.<br />
+          Es cómo llegan.
+        </span>
+
+        <p class="mb-4">
+          Muchas clínicas reciben solicitudes por WhatsApp, formularios
+          genéricos o llamadas que se mezclan entre sí.
+        </p>
+
+        <p class="mb-6">
+          Esto provoca mensajes desordenados, cancelaciones, dobles reservas y
+          recordatorios manuales que consumen tiempo de recepción.
+        </p>
+
+        <p class="mb-8 font-medium">
+          Este proyecto es un sistema pensado para organizar y priorizar las
+          solicitudes desde el primer contacto.
+        </p>
+
+        <a
+          href="/proyectos/formulario-clinicas"
+          class="inline-block font-semibold text-blue-600 hover:text-blue-700"
+        >
+          Ver el proyecto completo →
+        </a>
+      </div>
+
+      {/* Imagen */}
+      <div>
+        <Image
+          src={plazoriamall}
+          alt="Sistema de gestión de solicitudes para clínicas dentales"
+          class="rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </div>
+</section>
