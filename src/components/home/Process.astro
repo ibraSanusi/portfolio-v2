@@ -1,0 +1,59 @@
+---
+const process = [
+  {
+    title: "Lo mantengo simple",
+    description:
+      "Trabajo con clínicas dentales. Si tu negocio necesitas automatizar procesos y ahorrar tiempo puedes trabajar conmigo.",
+    imageUrl: "planning.jpg",
+  },
+  {
+    title: "Como te ayudo",
+    description:
+      "Tengo una reunión contigo, escucho el problema que necesitas solucionar, te muestro el planteamiento y me pongo a ello.",
+    imageUrl: "girl-stressed.jpg",
+  },
+  {
+    title: "Final del proyecto",
+    description:
+      "Confirmamos que hayas quedado satisfecho y cerramos el proyecto. Si lo necesitas tendrás una formación y si te ha encantado el serviio podríamos seguir con otros desarrollos.",
+    imageUrl: "project-ended.jpg",
+  },
+];
+---
+
+<section class="bg-ternary h-auto w-screen px-8 lg:p-24">
+  <div
+    class="max-w-desktop mx-auto flex h-full w-full flex-col space-y-8 lg:gap-6"
+  >
+    <h2 class="text-7xl">Proceso</h2>
+    <div class="flex md:flex-col md:gap-32">
+      {
+        process.map((item, index) => (
+          <div
+            class={`flex md:flex-row md:items-center md:gap-16 ${
+              index === 1 ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            <article class="flex flex-1 flex-col gap-8">
+              <h3 class="text-3xl">{item.title}</h3>
+              <p class="text-xl text-pretty text-black/70">
+                {item.description}
+              </p>
+              {/* <button class="bg-brand w-[210px] rounded-lg px-6 py-3.5 font-bold text-white">
+                Cuentame tu caso
+              </button> */}
+            </article>
+
+            <div class="flex-1">
+              <img
+                class="w-full max-w-lg rounded-lg"
+                src={item.imageUrl}
+                alt={`Imagen de ${item.title}`}
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
