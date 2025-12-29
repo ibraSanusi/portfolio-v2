@@ -1,0 +1,88 @@
+---
+import Badge from "@/components/ui/Badge.astro";
+import Separator from "@/components/ui/Separator.astro";
+import H2Typography from "@/components/ui/H2Typography.astro";
+import { Image } from "astro:assets";
+import plazoriamall from "public/projects/plazoriamall.avif";
+import examioHome from "public/projects/examio-home.avif";
+import recomiendapp from "public/projects/recomiendapp.avif";
+
+const projects = [
+  {
+    imgUrl: plazoriamall,
+    alt: "Imagen del proyecto de Plazoria Mall",
+    title: "Plazoriamall",
+    description: "Tienda online.",
+    badgeTitle: "Cliente",
+    href: "https://www.plazoriamall.com/",
+  },
+  {
+    imgUrl: examioHome,
+    alt: "Imagen del proyecto examio",
+    title: "Examio",
+    description: "Desarrollo con React.js y OpenAi API.",
+    badgeTitle: "Personal",
+    href: "https://examio-ten.vercel.app/",
+  },
+  {
+    imgUrl: recomiendapp,
+    alt: "Imagen proyecto de photoscore de Recomiend.app",
+    title: "Photo Score",
+    description: "Mejora de foto de perfil con IA.",
+    badgeTitle: "Cliente",
+    href: "https://recomiend.app/analizador-foto-perfil-ia",
+  },
+];
+---
+
+<section id="projects" class="bg-ternary h-auto w-screen px-8 lg:p-24">
+  <div
+    class="max-w-desktop mx-auto flex h-full w-full flex-col space-y-8 lg:gap-6"
+  >
+    <H2Typography>Proyectos</H2Typography>
+    <Separator />
+
+    {
+      projects.length > 3 && (
+        <a class="text-brand" href="/proyectos">
+          {" "}
+          Ver todos{" "}
+        </a>
+      )
+    }
+  </div>
+
+  <article class="flex flex-row gap-4 overflow-x-scroll md:grid md:grid-cols-2">
+    {
+      projects.map((project) => (
+        <a
+          target="_blank"
+          href={project.href}
+          class="flex flex-1 grow flex-col gap-4"
+        >
+          <Image
+            title={project.title}
+            fetchpriority="high"
+            widths={[480, 760, 1200]}
+            sizes="(max-width: 768px) 100vw, 760px"
+            class="grow rounded-2xl transition-opacity duration-700 hover:opacity-70"
+            src={project.imgUrl}
+            alt={project.alt}
+            loading="lazy"
+            format="avif"
+          />
+
+          <div class="flex flex-row gap-8">
+            <div class="flex-1 gap-2">
+              <span class="text-xl">{project.title}</span>
+              <p class="text-gray-second text-md line-clamp-1 w-full max-w-[250px] shrink">
+                {project.description}
+              </p>
+            </div>
+            <Badge title={project.badgeTitle} />
+          </div>
+        </a>
+      ))
+    }
+  </article>
+</section>
