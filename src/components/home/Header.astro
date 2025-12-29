@@ -1,17 +1,24 @@
 ---
+import { Image } from "astro:assets";
 import BurgerIcon from "../ui/icons/BurgerIcon.astro";
 import Button from "../ui/Button.astro";
+import logo from "public/logo.png";
 ---
 
 <header class="">
   <div class="max-w-desktop mx-auto flex items-center justify-between p-3.5">
-    <img src="logo.png" alt="logo de ibrasanusi" class="w-[100px]" />
+    <Image
+      src={logo}
+      alt="logo de ibrasanusi"
+      class="w-[100px]"
+      widths={[480, 760, 1200]}
+    />
 
     <nav class="hidden md:flex md:flex-row md:gap-[26px]">
-      <a href="" class="font-semibold">Inicio</a>
+      <a href="/" class="font-semibold">Inicio</a>
       <a href="" class="font-semibold">Servicios</a>
       <a href="" class="font-semibold">Porfolio</a>
-      <a href="" class="font-semibold">Contacto</a>
+      <a href="/contacto" class="font-semibold">Contacto</a>
     </nav>
 
     <div class="hidden md:block">
