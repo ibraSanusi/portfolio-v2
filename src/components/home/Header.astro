@@ -5,14 +5,16 @@ import Button from "../ui/Button.astro";
 import logo from "public/logo.png";
 ---
 
-<header class="">
+<header>
   <div class="max-w-desktop mx-auto flex items-center justify-between p-3.5">
-    <Image
-      src={logo}
-      alt="logo de ibrasanusi"
-      class="w-[100px]"
-      widths={[480, 760, 1200]}
-    />
+    <a href="/"
+      ><Image
+        src={logo}
+        alt="logo de ibrasanusi"
+        class="w-[100px]"
+        widths={[480, 760, 1200]}
+      /></a
+    >
 
     <nav class="hidden md:flex md:flex-row md:gap-[26px]">
       <a href="/" class="font-semibold">Inicio</a>
