@@ -1,7 +1,7 @@
 ---
+import "../styles/global.css";
 import Footer from "@/components/home/Footer.astro";
 import Header from "@/components/home/Header.astro";
-import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
 
 const {
@@ -38,7 +38,7 @@ const {
     <Header />
     <slot />
     <Analytics />
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
 
