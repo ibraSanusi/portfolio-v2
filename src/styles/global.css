@@ -6,12 +6,15 @@
   --coffe-bean: #120309;
   --alabaster-grey: #e2e3e4;
   --radius: 8px;
+
+  --soft-white: #f6f6f6;
 }
 
 @theme {
   --color-brand: var(--digital-blue);
   --color-primary: var(--coffe-bean);
   --color-secondary: var(--alabaster-grey);
+  --color-ternary: var(--soft-white);
 
   --max-width-desktop: 1440px;
 }
