@@ -3,6 +3,13 @@ import { Image } from "astro:assets";
 import BurgerIcon from "../ui/icons/BurgerIcon.astro";
 import Button from "../ui/Button.astro";
 import logo from "public/logo.png";
+
+const navLinks = [
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Porfolio", href: "/porfolio" },
+  { label: "Contacto", href: "/contacto" },
+];
 ---
 
 <header>
@@ -17,10 +24,17 @@ import logo from "public/logo.png";
     >
 
     <nav class="hidden md:flex md:flex-row md:gap-[26px]">
-      <a href="/" class="font-semibold">Inicio</a>
-      <a href="" class="font-semibold">Servicios</a>
-      <a href="" class="font-semibold">Porfolio</a>
-      <a href="/contacto" class="font-semibold">Contacto</a>
+      {
+        navLinks.map(({ label, href }) => (
+          <a
+            href={href}
+            class="flex h-6 flex-col overflow-y-hidden font-semibold *:transform *:transition-transform *:duration-500 hover:*:-translate-y-6"
+          >
+            <span>{label}</span>
+            <span class="text-brand">{label}</span>
+          </a>
+        ))
+      }
     </nav>
 
     <div class="hidden md:block">
