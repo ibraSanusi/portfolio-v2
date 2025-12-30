@@ -21,39 +21,39 @@ const process = [
 ];
 ---
 
-<section class="bg-ternary h-auto w-screen px-8 lg:p-24">
+<section class="bg-ternary h-auto w-screen p-8 lg:p-24">
   <div
     class="max-w-desktop mx-auto flex h-full w-full flex-col space-y-8 lg:gap-6"
   >
-    <h2 class="text-7xl">Proceso</h2>
-    <div class="flex md:flex-col md:gap-32">
+    <h2 class="text-5xl md:text-7xl">Proceso</h2>
+    <section class="flex flex-col gap-32">
       {
         process.map((item, index) => (
-          <div
-            class={`flex md:flex-row md:items-center md:gap-16 ${
+          <article
+            class={`flex flex-col gap-16 md:flex-row md:items-center ${
               index === 1 ? "md:flex-row-reverse" : ""
             }`}
           >
-            <article class="flex flex-1 flex-col gap-8">
-              <h3 class="text-3xl">{item.title}</h3>
-              <p class="text-xl text-pretty text-black/70">
+            <div class="flex flex-1 flex-col gap-8">
+              <h3 class="text-center text-3xl md:text-start">{item.title}</h3>
+              <p class="text-center text-xl text-pretty text-black/70 md:text-start">
                 {item.description}
               </p>
               {/* <button class="bg-brand w-[210px] rounded-lg px-6 py-3.5 font-bold text-white">
                 Cuentame tu caso
               </button> */}
-            </article>
+            </div>
 
             <div class="flex-1">
               <img
-                class="w-full max-w-lg rounded-lg"
+                class="mx-auto w-full max-w-lg rounded-lg md:mx-0"
                 src={item.imageUrl}
                 alt={`Imagen de ${item.title}`}
               />
             </div>
-          </div>
+          </article>
         ))
       }
-    </div>
+    </section>
   </div>
 </section>
