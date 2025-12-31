@@ -10,39 +10,47 @@ import DentalProject from "@/components/home/DentalProject.astro";
   <Process />
   <DentalProject />
 </Layout>
-
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ibrahim Sanusi",
-    "url": "https://ibrasanusi.com",
-    // "image": "https://tu-sitio.com/tu-foto.jpg",
-    "jobTitle": "Desarrollador Web / Frontend & Fullstack",
-    "email": "mailto:ibra.sanusi.ayo@gmail.com",
-    "sameAs": [
-      "https://linkedin.com/in/ibrahim-ayodeji-sanusi",
-      "https://github.com/ibraSanusi"
-    ],
-    "knowsAbout": [
-      "Diseño Web",
-      "SEO",
-      "Animaciones CSS",
-      "Ecommerce",
-      "Next.js",
-      "React.js",
-      "HTML5",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "PostgreSQL"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Ibrahim Sanusi Freelance",
-      "url": "https://ibrasanusi.com"
-    }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://ibrasanusi.com/#person",
+        "name": "Ibrahim Sanusi",
+        "url": "https://ibrasanusi.com",
+        "jobTitle": "Desarrollador Web",
+        "email": "mailto:ibra.sanusi.ayo@gmail.com",
+        "sameAs": [
+          "https://linkedin.com/in/ibrahim-ayodeji-sanusi",
+          "https://github.com/ibraSanusi"
+        ],
+        "knowsAbout": [
+          "Sistemas de gestión para clínicas dentales",
+          "Formularios inteligentes",
+          "Optimización de procesos de recepción",
+          "Desarrollo web a medida",
+          "Automatización de procesos"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ibrasanusi.com/#service",
+        "name": "Gestión de solicitudes web para clínicas dentales",
+        "description": "Sistema para organizar y priorizar las solicitudes de pacientes que llegan desde la web de una clínica dental, facilitando el trabajo de recepción y la atención de urgencias.",
+        "provider": {
+          "@type": "Person",
+          "@id": "https://ibrasanusi.com/#person"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "España"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Clínicas dentales"
+        }
+      }
+    ]
   }
 </script>
