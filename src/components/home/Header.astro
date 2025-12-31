@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import BurgerIcon from "../ui/icons/BurgerIcon.astro";
 import Button from "../ui/Button.astro";
 import logo from "public/logo.png";
+import PlusIcon from "../ui/icons/PlusIcon.astro";
 
 const navLinks = [
   { label: "Inicio", href: "/" },
-  { label: "Servicios", href: "/servicios" },
-  { label: "Porfolio", href: "/porfolio" },
+  { label: "Proyectos", href: "/proyectos" },
   { label: "Contacto", href: "/contacto" },
 ];
 ---
@@ -45,7 +45,7 @@ const navLinks = [
       <div>
         <Button>Explícame tu caso</Button>
       </div>
-      <button class="bg-secondary rounded-lg p-2">
+      <button class="bg-secondary menu-button rounded-lg p-2">
         <BurgerIcon class="size-10" />
       </button>
     </div>
@@ -57,8 +57,33 @@ const navLinks = [
   class="fixed -top-16 right-2 flex flex-row items-center gap-2 transition-transform lg:right-8"
 >
   <Button>Explícame tu caso</Button>
-  <button class="bg-ternary rounded-lg p-2">
+  <button class="bg-ternary menu-button rounded-lg p-2">
     <BurgerIcon class="size-10" />
+  </button>
+</div>
+
+<div
+  id="menu"
+  class="bg-brand fixed top-0 h-screen w-screen -translate-y-full transform transition-transform duration-500"
+>
+  <nav
+    class="mx-auto grid h-full w-full max-w-2xl place-content-center gap-8 *:text-3xl *:text-white"
+  >
+    {
+      navLinks.map(({ label, href }) => (
+        <a
+          href={href}
+          class="flex h-9 flex-col overflow-y-hidden font-semibold *:transform *:transition-transform *:duration-500 hover:*:-translate-y-9"
+        >
+          <span>{label}</span>
+          <span>{label}</span>
+        </a>
+      ))
+    }
+  </nav>
+
+  <button id="close-menu-button" class="absolute top-4 right-8">
+    <PlusIcon class="size-18 rotate-45 text-white" />
   </button>
 </div>
 
@@ -69,6 +94,10 @@ const navLinks = [
     }
   }
 
+  div#menu.open {
+    transform: translateY(100%);
+  }
+
   #floating_cta {
     animation-name: drop-cta;
     animation-fill-mode: both;
@@ -77,3 +106,28 @@ const navLinks = [
     animation-range: 100px 300px;
   }
 </style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButtons = document.querySelectorAll(".menu-button");
+    const closeMenuButton = document.querySelector("#close-menu-button");
+    const menu = document.querySelector("#menu");
+    const body = document.querySelector("body");
+
+    if (!menu || !menuButtons.length || !closeMenuButton) return;
+
+    // Abrir menú
+    menuButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        menu.classList.add("open");
+        body?.classList.add("scroll-y-none");
+      });
+    });
+
+    // Cerrar menú
+    closeMenuButton.addEventListener("click", () => {
+      menu.classList.remove("open");
+      body?.classList.remove("scroll-y-none");
+    });
+  });
+</script>
