@@ -3,50 +3,72 @@ const process = [
   {
     title: "Lo mantengo simple",
     description:
-      "Trabajo con clínicas dentales. Si tu negocio necesitas automatizar procesos y ahorrar tiempo puedes trabajar conmigo.",
+      "Trabajo únicamente con clínicas dentales. Analizo cómo entran ahora las solicitudes y detecto dónde se pierde tiempo o información.",
     imageUrl: "planning.jpg",
   },
   {
-    title: "Como te ayudo",
+    title: "Diseño la solución",
     description:
-      "Tengo una reunión contigo, escucho el problema que necesitas solucionar, te muestro el planteamiento y me pongo a ello.",
+      "Tengo una reunión contigo, entiendo el problema y diseño un sistema sencillo para organizar y priorizar las solicitudes desde el primer contacto.",
     imageUrl: "girl-stressed.jpg",
   },
   {
-    title: "Final del proyecto",
+    title: "Entrega y validación",
     description:
-      "Confirmamos que hayas quedado satisfecho y cerramos el proyecto. Si lo necesitas tendrás una formación y si te ha encantado el serviio podríamos seguir con otros desarrollos.",
+      "Confirmamos que todo funciona como esperabas. Te explico el sistema y, si tiene sentido, seguimos mejorándolo con nuevas automatizaciones.",
     imageUrl: "project-ended.jpg",
   },
 ];
 ---
 
-<section class="bg-ternary h-auto w-screen p-8 lg:p-24">
-  <div
-    class="max-w-desktop mx-auto flex h-full w-full flex-col space-y-8 lg:gap-6"
-  >
-    <h2 class="text-xl md:text-7xl">Proceso</h2>
-    <section class="flex flex-col gap-32">
+<section class="bg-ternary w-screen px-8 py-16 lg:px-24 lg:py-24">
+  <div class="max-w-desktop mx-auto flex flex-col space-y-20">
+    <!-- Título sección -->
+    <header class="space-y-4">
+      <h2 class="text-3xl font-semibold md:text-5xl lg:text-6xl">
+        Cómo trabajo con clínicas dentales
+      </h2>
+      <p class="text-lg text-black/70">
+        Un proceso claro, sin complicaciones y orientado a reducir carga de
+        trabajo en recepción.
+      </p>
+    </header>
+
+    <!-- Pasos -->
+    <section class="flex flex-col space-y-24 md:space-y-32">
       {
         process.map((item, index) => (
           <article
-            class={`flex flex-col gap-16 md:flex-row md:items-center ${
+            class={`flex flex-col items-center gap-12 md:flex-row md:items-center ${
               index === 1 ? "md:flex-row-reverse" : ""
             }`}
           >
-            <div class="flex flex-1 flex-col gap-8">
-              <h3 class="text-center text-3xl md:text-start">{item.title}</h3>
-              <p class="text-center text-xl text-pretty text-black/70 md:text-start">
+            <div class="flex flex-1 flex-col gap-4">
+              <span class="text-brand text-sm font-medium tracking-wide uppercase">
+                Paso {index + 1}
+              </span>
+
+              <h3 class="text-3xl font-semibold">{item.title}</h3>
+
+              <p class="max-w-[45ch] text-xl text-black/70">
                 {item.description}
               </p>
-              {/* <button class="bg-brand w-[210px] rounded-lg px-6 py-3.5 font-bold text-white">
-                Cuentame tu caso
-              </button> */}
+
+              {index === process.length - 1 && (
+                <div class="pt-4">
+                  <a
+                    href="/contacto"
+                    class="bg-brand inline-block rounded-lg px-6 py-3 font-semibold text-white"
+                  >
+                    Explícame tu caso
+                  </a>
+                </div>
+              )}
             </div>
 
             <div class="flex-1">
               <img
-                class="mx-auto w-full max-w-lg rounded-lg md:mx-0"
+                class="mx-auto w-full max-w-md rounded-xl"
                 src={item.imageUrl}
                 alt={`Imagen de ${item.title}`}
               />
