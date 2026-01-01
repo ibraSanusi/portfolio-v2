@@ -1,0 +1,109 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="w-screen px-8 py-20 lg:px-24">
+    <div class="mx-auto max-w-5xl">
+      <h1 class="mb-4">
+        Sistema de gestión de solicitudes web para clínicas dentales
+      </h1>
+
+      <p class="mb-12 text-lg text-slate-600">
+        Un sistema diseñado para organizar, priorizar y responder solicitudes de
+        pacientes sin caos en recepción.
+      </p>
+
+      <div class="mb-20">
+        <video
+          src="/projects/dental-project-demo.mov"
+          class="aspect-video rounded-xl shadow-lg"
+          controls
+          poster="/projects/formulario-proyecto-dental.webp"></video>
+      </div>
+
+      <div class="space-y-6">
+        <p>
+          Muchas clínicas reciben solicitudes por WhatsApp, formularios
+          genéricos o llamadas que se mezclan entre sí. Cuando todo entra igual,
+          las consultas urgentes se pierden y recepción pierde tiempo
+          organizando.
+        </p>
+
+        <p>
+          Este sistema organiza automáticamente las solicitudes que llegan desde
+          la web de la clínica, clasificándolas según el tipo de consulta y el
+          nivel de urgencia.
+        </p>
+
+        <h2>Cómo funciona</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>El paciente envía una solicitud desde la web</li>
+          <li>El sistema clasifica la consulta según tipo y urgencia</li>
+          <li>Las solicitudes urgentes se priorizan automáticamente</li>
+          <li>Recepción ve qué pacientes contactar primero</li>
+          <li>Inicio de WhatsApp con un clic y mensaje predeterminado</li>
+          <li>Estado actualizado automáticamente a “contactado”</li>
+        </ul>
+
+        <h2>Beneficios para la clínica</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>Menos mensajes desordenados</li>
+          <li>Menos gestión manual</li>
+          <li>Prioridad clara de pacientes urgentes</li>
+          <li>Ahorro de tiempo diario en recepción</li>
+        </ul>
+
+        <h2>Posibles integraciones futuras</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>Notificaciones automáticas al recibir nuevas solicitudes</li>
+          <li>Llamadas directas desde el panel sin salir del sistema</li>
+        </ul>
+      </div>
+
+      <div class="mt-20">
+        <a
+          href="/contacto"
+          class="inline-block rounded-lg bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-700"
+        >
+          Explícame tu caso
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Sistema de gestión de solicitudes para clínicas dentales",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Sistema web diseñado para organizar, priorizar y gestionar solicitudes de pacientes en clínicas dentales, reduciendo carga manual en recepción y mejorando la atención a consultas urgentes.",
+    "url": "https://ibrasanusi.com/proyectos/sistema-clinicas-dentales",
+    "image": "https://ibrasanusi.com/projects/formulario-proyecto-dental.webp",
+    "creator": {
+      "@type": "Person",
+      "name": "Ibrahim Sanusi",
+      "url": "https://ibrasanusi.com",
+      "jobTitle": "Diseñador y desarrollador web especializado en clínicas dentales",
+      "sameAs": [
+        "https://linkedin.com/in/ibrahim-ayodeji-sanusi",
+        "https://github.com/ibraSanusi"
+      ]
+    },
+    "featureList": [
+      "Formulario inteligente de solicitudes",
+      "Clasificación automática por tipo y urgencia",
+      "Priorización de consultas urgentes",
+      "Dashboard para recepción",
+      "Contacto por WhatsApp con un clic",
+      "Actualización automática de estado de contacto"
+    ],
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Clínicas dentales"
+    }
+  }
+</script>

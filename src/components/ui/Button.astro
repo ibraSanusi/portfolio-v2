@@ -1,42 +1,4 @@
----
-interface Props {
-  variants?: "primary" | "secondary";
-  class?: string;
-  type?: "button" | "submit" | "reset";
-  id?: string;
-}
-
-const {
-  variants = "primary",
-  class: className,
-  type = "button",
-  id,
-} = Astro.props as Props;
----
-
 <button
-  id={id}
-  type={type}
-  class:list={[
-    {
-      "rounded-2xl py-4 px-4 sm:px-8 bg-brand text-black":
-        variants === "primary",
-      "rounded-2xl py-4 px-4 sm:px-8 bg-gray": variants === "secondary",
-    },
-    "overflow-y-hidden h-14 group cursor-pointer",
-    className,
-  ]}
+  class="bg-brand w-full max-w-3xs place-self-center rounded-lg px-6 py-4 font-bold text-white hover:bg-blue-700 lg:max-w-[210px] lg:place-self-start"
+  ><slot /></button
 >
-  <div
-    class="flex flex-col group-hover:-translate-y-10 transform transition-transform"
-  >
-    <span class="mb-4 group-hover:opacity-0 transition-opacity duration-500">
-      <slot />
-    </span>
-    <span
-      class="opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-    >
-      <slot />
-    </span>
-  </div>
-</button>

@@ -1,72 +1,133 @@
 ---
-import CartIcon from "@/components/ui/icons/CartIcon.astro";
-import HomeIcon from "@/components/ui/icons/HomeIcon.astro";
-import MailIcon from "@/components/ui/icons/MailIcon.astro";
-import BookIcon from "../ui/icons/BookIcon.astro";
+import { Image } from "astro:assets";
+import BurgerIcon from "../ui/icons/BurgerIcon.astro";
+import Button from "../ui/Button.astro";
+import logo from "public/logo.png";
+import PlusIcon from "../ui/icons/PlusIcon.astro";
+
+const navLinks = [
+  { label: "Inicio", href: "/" },
+  { label: "Proyectos", href: "/proyectos" },
+  { label: "Contacto", href: "/contacto" },
+];
 ---
 
 <header>
-  <ul
-    id="layout-header"
-    class="flex flex-row justify-between items-center w-full max-w-72 m-auto fixed top-6 left-1/2 transform -translate-x-1/2 z-10 bg-brand-sixth p-2 rounded-full border border-brand-sixth/10"
-  >
-    <li id="header-home">
-      <a aria-label="Página de inicio" title="Inicio" href="/">
-        <HomeIcon />
-      </a>
-    </li>
-    <li>
-      <!-- Por ahora apunta a Landings básicas pero cambiar a servicios -->
-      <a
-        aria-label="Página de servicios"
-        title="Servicios landings básicas"
-        href="/servicios/landings-basicas"
-      >
-        <CartIcon />
-      </a>
-    </li>
-    <li id="header-blog">
-      <a aria-label="Página de blog" title="Blog" href="/blog">
-        <BookIcon />
-      </a>
-    </li>
-    <li>
-      <a aria-label="Página de contacto" title="Contacto" href="/contacto">
-        <MailIcon />
-      </a>
-    </li>
-  </ul>
+  <div class="max-w-desktop mx-auto flex items-center justify-between p-3.5">
+    <a href="/"
+      ><Image
+        src={logo}
+        alt="logo de ibrasanusi"
+        class="w-[100px]"
+        widths={[480, 760, 1200]}
+      /></a
+    >
+
+    <nav class="hidden md:flex md:flex-row md:gap-[26px]">
+      {
+        navLinks.map(({ label, href }) => (
+          <a
+            href={href}
+            class="flex h-6 flex-col overflow-y-hidden font-semibold *:transform *:transition-transform *:duration-500 hover:*:-translate-y-6"
+          >
+            <span>{label}</span>
+            <span class="text-brand">{label}</span>
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden md:block">
+      <Button>Explícame tu caso</Button>
+    </div>
+
+    <div class="flex items-stretch gap-2 md:hidden">
+      <div>
+        <Button>Explícame tu caso</Button>
+      </div>
+      <button class="bg-secondary menu-button rounded-lg p-2">
+        <BurgerIcon class="size-10" />
+      </button>
+    </div>
+  </div>
 </header>
 
+<div
+  id="floating_cta"
+  class="fixed -top-16 right-2 z-40 flex flex-row items-center gap-2 transition-transform lg:right-8"
+>
+  <Button>Explícame tu caso</Button>
+  <button class="bg-ternary menu-button rounded-lg p-2">
+    <BurgerIcon class="size-10" />
+  </button>
+</div>
+
+<div
+  id="menu"
+  class="bg-brand fixed top-0 z-50 h-screen w-screen -translate-y-full transform transition-transform duration-500"
+>
+  <nav
+    class="mx-auto grid h-full w-full max-w-2xl place-content-center gap-8 *:text-3xl *:text-white"
+  >
+    {
+      navLinks.map(({ label, href }) => (
+        <a
+          href={href}
+          class="flex h-9 flex-col overflow-y-hidden font-semibold *:transform *:transition-transform *:duration-500 hover:*:-translate-y-9"
+        >
+          <span>{label}</span>
+          <span>{label}</span>
+        </a>
+      ))
+    }
+  </nav>
+
+  <button id="close-menu-button" class="absolute top-4 right-8">
+    <PlusIcon class="size-18 rotate-45 text-white" />
+  </button>
+</div>
+
 <style>
-  ul {
-    backdrop-filter: blur(30px);
-    box-shadow: 0px 0px 1px rgb(255, 255, 255, 0.3);
+  @keyframes drop-cta {
+    to {
+      transform: translateY(90px);
+    }
   }
 
-  li {
-    color: var(--color-gray-second);
-    border-radius: calc(infinity * 1px);
-    padding: calc(var(--spacing) * 2);
+  div#menu.open {
+    transform: translateY(100%);
   }
 
-  .active {
-    background-color: #2c2c2c;
-    color: white;
+  #floating_cta {
+    animation-name: drop-cta;
+    animation-fill-mode: both;
+
+    animation-timeline: scroll();
+    animation-range: 100px 300px;
   }
 </style>
 
-<script>
+<script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const lists = document.getElementsByTagName("li");
-    const slug = window.location.pathname;
+    const menuButtons = document.querySelectorAll(".menu-button");
+    const closeMenuButton = document.querySelector("#close-menu-button");
+    const menu = document.querySelector("#menu");
+    const body = document.querySelector("body");
 
-    for (const list of lists) {
-      const link = list.querySelector("a");
-      if (!link) continue;
-      if (link.getAttribute("href") === slug) {
-        list.classList.add("active");
-      }
-    }
+    if (!menu || !menuButtons.length || !closeMenuButton) return;
+
+    // Abrir menú
+    menuButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        menu.classList.add("open");
+        body?.classList.add("scroll-y-none");
+      });
+    });
+
+    // Cerrar menú
+    closeMenuButton.addEventListener("click", () => {
+      menu.classList.remove("open");
+      body?.classList.remove("scroll-y-none");
+    });
   });
 </script>

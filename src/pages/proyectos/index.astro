@@ -1,0 +1,138 @@
+---
+import Badge from "@/components/ui/Badge.astro";
+import Separator from "@/components/ui/Separator.astro";
+import H2Typography from "@/components/ui/H2Typography.astro";
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+
+// Proyecto principal (clínicas dentales)
+import dentalProject from "public/projects/formulario-proyecto-dental.webp";
+
+// Otros proyectos
+import plazoriamall from "public/projects/plazoriamall.avif";
+import examioHome from "public/projects/examio-home.avif";
+import recomiendapp from "public/projects/recomiendapp.avif";
+
+const otherProjects = [
+  {
+    imgUrl: plazoriamall,
+    alt: "Imagen del proyecto Plazoria Mall",
+    title: "Plazoriamall",
+    description: "E-commerce desarrollado a medida.",
+    badgeTitle: "E-commerce",
+    href: "https://www.plazoriamall.com/",
+  },
+  {
+    imgUrl: examioHome,
+    alt: "Imagen del proyecto Examio",
+    title: "Examio",
+    description: "Producto web con React y OpenAI API.",
+    badgeTitle: "Producto SaaS",
+    href: "https://examio-ten.vercel.app/",
+  },
+  {
+    imgUrl: recomiendapp,
+    alt: "Imagen del proyecto Photo Score",
+    title: "Photo Score",
+    description: "Herramienta de análisis de imagen con IA.",
+    badgeTitle: "IA aplicada",
+    href: "https://recomiend.app/analizador-foto-perfil-ia",
+  },
+];
+---
+
+<Layout>
+  <section class="w-screen px-8 py-20 lg:px-24">
+    <div class="max-w-desktop mx-auto space-y-20">
+      <!-- PROYECTO PRINCIPAL -->
+      <section class="space-y-6">
+        <H2Typography>Proyecto principal · Clínicas dentales</H2Typography>
+
+        <p class="max-w-[65ch] text-lg text-black/70">
+          Sistema web diseñado para organizar y priorizar las solicitudes de
+          pacientes desde la web de una clínica dental, reduciendo tareas
+          manuales y mejorando la atención a consultas urgentes.
+        </p>
+
+        <a
+          href="/proyectos/sistema-clinicas-dentales"
+          class="group relative block overflow-hidden rounded-2xl"
+        >
+          <Image
+            src={dentalProject}
+            alt="Sistema de gestión de solicitudes para clínicas dentales"
+            class="rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+            widths={[760, 1200]}
+            sizes="(max-width: 768px) 100vw, 1200px"
+            format="webp"
+          />
+
+          <div
+            class="absolute inset-0 flex items-end bg-linear-to-t from-black/60 to-transparent p-6"
+          >
+            <div class="space-y-2">
+              <h3 class="text-2xl font-semibold text-white">
+                Sistema de gestión de solicitudes web
+              </h3>
+              <span class="inline-block text-white/90 underline">
+                Ver proyecto completo →
+              </span>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <Separator />
+
+      <!-- OTROS PROYECTOS -->
+      <section class="space-y-8">
+        <H2Typography>Otros proyectos y productos web</H2Typography>
+
+        <p class="max-w-[60ch] text-black/70">
+          Además de soluciones para clínicas dentales, he desarrollado otros
+          proyectos web que demuestran mi experiencia en frontend, backend y
+          construcción de productos reales.
+        </p>
+
+        <article
+          class="flex flex-row gap-6 overflow-x-scroll pb-4 md:grid md:grid-cols-2"
+        >
+          {
+            otherProjects.map((project) => (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.href}
+                class="flex min-w-[280px] flex-col gap-4"
+              >
+                <Image
+                  title={project.title}
+                  src={project.imgUrl}
+                  alt={project.alt}
+                  class="rounded-2xl transition-opacity duration-500 hover:opacity-80"
+                  widths={[480, 760]}
+                  sizes="(max-width: 768px) 100vw, 760px"
+                  loading="lazy"
+                  format="avif"
+                />
+
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="block text-xl font-medium">
+                      {project.title}
+                    </span>
+                    <p class="line-clamp-2 max-w-[280px] text-black/60">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  <Badge title={project.badgeTitle} />
+                </div>
+              </a>
+            ))
+          }
+        </article>
+      </section>
+    </div>
+  </section>
+</Layout>

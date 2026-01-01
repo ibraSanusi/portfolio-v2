@@ -1,79 +1,56 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "@/components/home/Hero.astro";
-import Projects from "@/components/home/Projects.astro";
-import WhatIDo from "@/components/home/WhatIDo.astro";
-import WorkExperience from "@/components/home/WorkExperience.astro";
-import Pricing from "@/components/home/Pricing.astro";
-import CTA from "@/components/home/CTA.astro";
-import Technologies from "@/components/home/Technologies.astro";
-import FAQ from "@/components/home/FAQ.astro";
+import Process from "@/components/home/Process.astro";
+import DentalProject from "@/components/home/DentalProject.astro";
 ---
 
 <Layout>
-  <!-- <div id="observer-overlay"></div> -->
-  <main id="#scrollArea" class="space-y-16 max-w-4xl m-auto">
-    <Hero />
-    <Projects />
-    <WhatIDo />
-    <Technologies />
-    <WorkExperience />
-    <Pricing />
-    <FAQ />
-    <CTA />
-  </main>
+  <Hero />
+  <Process />
+  <DentalProject />
 </Layout>
-
-<style>
-  main {
-    padding: 170px 16px 40px 16px;
-  }
-
-  /* #observer-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    box-sizing: border-box;
-    border-top: 50px solid rgba(255, 0, 0, 0.3);
-    border-bottom: 50px solid rgba(0, 0, 255, 0.3); 
-  } */
-</style>
-
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ibrahim Sanusi",
-    "url": "https://ibrasanusi.com",
-    // "image": "https://tu-sitio.com/tu-foto.jpg",
-    "jobTitle": "Desarrollador Web / Frontend & Fullstack",
-    "email": "mailto:ibra.sanusi.ayo@gmail.com",
-    "sameAs": [
-      "https://linkedin.com/in/ibrahim-ayodeji-sanusi",
-      "https://github.com/ibraSanusi"
-    ],
-    "knowsAbout": [
-      "Diseño Web",
-      "SEO",
-      "Animaciones CSS",
-      "Ecommerce",
-      "Next.js",
-      "React.js",
-      "HTML5",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "PostgreSQL"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Ibrahim Sanusi Freelance",
-      "url": "https://ibrasanusi.com"
-    }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://ibrasanusi.com/#person",
+        "name": "Ibrahim Sanusi",
+        "url": "https://ibrasanusi.com",
+        "jobTitle": "Desarrollador Web",
+        "email": "mailto:ibra.sanusi.ayo@gmail.com",
+        "sameAs": [
+          "https://linkedin.com/in/ibrahim-ayodeji-sanusi",
+          "https://github.com/ibraSanusi"
+        ],
+        "knowsAbout": [
+          "Sistemas de gestión para clínicas dentales",
+          "Formularios inteligentes",
+          "Optimización de procesos de recepción",
+          "Desarrollo web a medida",
+          "Automatización de procesos"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://ibrasanusi.com/#service",
+        "name": "Gestión de solicitudes web para clínicas dentales",
+        "description": "Sistema para organizar y priorizar las solicitudes de pacientes que llegan desde la web de una clínica dental, facilitando el trabajo de recepción y la atención de urgencias.",
+        "provider": {
+          "@type": "Person",
+          "@id": "https://ibrasanusi.com/#person"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "España"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Clínicas dentales"
+        }
+      }
+    ]
   }
 </script>

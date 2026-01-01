@@ -1,45 +1,42 @@
 ---
-import Carousel from "../ui/Carousel.astro";
-import Link from "../ui/Link.astro";
-
-const badges = [
-  "Diseño Web",
-  "SEO",
-  "Animaciones",
-  "Webs personalizadas",
-  "Ecommerce",
-  "Wordpress",
-];
+import Button from "../ui/Button.astro";
 ---
 
-<section id="home" class="w-full flex flex-col gap-6 mx-auto">
-  <Carousel>
-    {
-      // Duplicamos los elementos para lograr el efecto infinito
-      Array.from({ length: 1 }).map(() =>
-        badges.map((badge) => (
-          <li class="py-1.5 px-4 basis-[5em] text-nowrap rounded-full text-xs bg-brand-fifth border border-brand-fifth-dark text-center font-medium">
-            {badge}
-          </li>
-        ))
-      )
-    }
-  </Carousel>
-
-  <p class="text-brand-secondary text-5xl text-center">
-    Soy Ibrahim, <br />
-    <span class="text-white">Desarrollador Web. </span>
-  </p>
-  <h1
-    class="text-brand-secondary text-lg text-center text-pretty max-w-[483px] self-center"
+<section class="w-screen p-8 md:h-screen lg:px-24">
+  <div
+    class="max-w-desktop mx-auto flex h-full w-full flex-col items-center space-y-8 lg:flex-row lg:gap-6"
   >
-    <span class="text-brand">Tu web, lista para vender y destacar.</span>
-    Si quieres más clientes y una presencia online que impacte, estás en el lugar
-    correcto.
-  </h1>
+    <article class="flex w-full flex-col gap-6">
+      <div class="mx-auto space-y-4 md:mx-0">
+        <span
+          class="text-muted block text-center text-sm tracking-wide uppercase lg:text-start"
+        >
+          Diseñador web especializado en clínicas dentales
+        </span>
 
-  <div class="flex flex-row gap-4 m-auto">
-    <Link href="/#pricing">Precios</Link>
-    <Link variants="secondary" href="/contact">Hablémos de tu proyecto</Link>
+        <h1
+          class="max-w-[20ch] text-center text-2xl leading-tight font-semibold md:text-5xl lg:text-start lg:text-4xl"
+        >
+          Organizo y priorizo las solicitudes de pacientes
+        </h1>
+      </div>
+
+      <p
+        class="mx-auto w-full max-w-[40ch] text-center text-xl lg:mx-0 lg:max-w-[40ch] lg:text-start"
+      >
+        Sistemas web sencillos para que recepción sepa a quién contactar primero
+        y deje de gestionar pacientes con caos y hojas sueltas.
+      </p>
+
+      <Button>Explícame tu caso</Button>
+    </article>
+
+    <div class="order-1 w-full rounded-lg">
+      <img
+        class="mx-auto w-full max-w-[720px] rounded-lg lg:mx-0"
+        src="working-image.jpg"
+        alt="Foto de Ibrahim de perfil"
+      />
+    </div>
   </div>
 </section>
