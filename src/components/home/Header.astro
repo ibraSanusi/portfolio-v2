@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import BurgerIcon from "../ui/icons/BurgerIcon.astro";
-import Button from "../ui/Button.astro";
 import logo from "public/logo.png";
 import PlusIcon from "../ui/icons/PlusIcon.astro";
 
@@ -13,7 +12,9 @@ const navLinks = [
 ---
 
 <header>
-  <div class="max-w-desktop mx-auto flex items-center justify-between p-3.5">
+  <div
+    class="max-w-desktop mx-auto flex items-center justify-between px-3.5 py-6"
+  >
     <a href="/"
       ><Image
         src={logo}
