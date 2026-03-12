@@ -1,16 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "@/components/home/Hero.astro";
-import Process from "@/components/home/Process.astro";
+import About from "@/components/home/About.astro";
 import DentalProject from "@/components/home/DentalProject.astro";
+import WorkExperience from "@/components/home/WorkExperience.astro";
+import Technologies from "@/components/home/Technologies.astro";
 ---
 
 <Layout>
   <Hero />
-  <Process />
+  <About />
+  <div class="bg-primary w-screen px-8 py-16 text-white lg:px-24 lg:py-24">
+    <div class="max-w-desktop mx-auto grid grid-cols-1 gap-24 lg:grid-cols-2">
+      <WorkExperience />
+      <div class="space-y-8">
+        <h2 class="text-3xl font-semibold md:text-4xl">Stack Tecnológico</h2>
+        <Technologies />
+      </div>
+    </div>
+  </div>
   <DentalProject />
 </Layout>
-<script type="application/ld+json">
+<script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -19,37 +30,23 @@ import DentalProject from "@/components/home/DentalProject.astro";
         "@id": "https://ibrasanusi.com/#person",
         "name": "Ibrahim Sanusi",
         "url": "https://ibrasanusi.com",
-        "jobTitle": "Desarrollador Web",
+        "jobTitle": "Full Stack Developer",
         "email": "mailto:ibra.sanusi.ayo@gmail.com",
         "sameAs": [
-          "https://linkedin.com/in/ibrahim-ayodeji-sanusi",
+          "https://linkedin.com/in/ibrahim-ayodejisanusi",
           "https://github.com/ibraSanusi"
         ],
         "knowsAbout": [
-          "Sistemas de gestión para clínicas dentales",
-          "Formularios inteligentes",
-          "Optimización de procesos de recepción",
-          "Desarrollo web a medida",
-          "Automatización de procesos"
+          "Full Stack Development",
+          "Backend Development",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Node.js",
+          "SQL",
+          "Sistemas B2B",
+          "Backoffices"
         ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://ibrasanusi.com/#service",
-        "name": "Gestión de solicitudes web para clínicas dentales",
-        "description": "Sistema para organizar y priorizar las solicitudes de pacientes que llegan desde la web de una clínica dental, facilitando el trabajo de recepción y la atención de urgencias.",
-        "provider": {
-          "@type": "Person",
-          "@id": "https://ibrasanusi.com/#person"
-        },
-        "areaServed": {
-          "@type": "Place",
-          "name": "España"
-        },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Clínicas dentales"
-        }
       }
     ]
   }
