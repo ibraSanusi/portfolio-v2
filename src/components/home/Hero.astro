@@ -1,5 +1,5 @@
 ---
-import Button from "../ui/Button.astro";
+import Link from "../ui/Link.astro";
 ---
 
 <section class="w-screen p-8 md:h-screen lg:px-24">
@@ -11,26 +11,26 @@ import Button from "../ui/Button.astro";
         <span
           class="text-muted block text-center text-sm tracking-wide uppercase lg:text-start"
         >
-          Diseñador web especializado en clínicas dentales
+          Full Stack Developer
         </span>
 
         <h1
           class="max-w-[20ch] text-center text-2xl leading-tight font-semibold md:text-5xl lg:text-start lg:text-4xl"
         >
-          Organizo y priorizo las solicitudes de pacientes
+          Construyendo sistemas web robustos y escalables
         </h1>
       </div>
 
       <p
         class="mx-auto w-full max-w-[40ch] text-center text-xl lg:mx-0 lg:max-w-[40ch] lg:text-start"
       >
-        Sistemas web sencillos para que recepción sepa a quién contactar primero
-        y deje de gestionar pacientes con caos y hojas sueltas.
+        Especializado en backend con un enfoque en aplicaciones web en producción. 
+        Experto en JavaScript, TypeScript, React, Node.js y SQL.
       </p>
-      <a
-        class="bg-brand w-full max-w-3xs place-self-center rounded-lg px-6 py-4 font-bold text-white hover:bg-blue-700 lg:max-w-[210px] lg:place-self-start"
-        href="/contacto">Explícame tu caso</a
-      >
+      <div class="flex flex-col gap-4 md:flex-row">
+        <Link href="#projects">Ver proyectos</Link>
+        <Link href="/contacto" variants="secondary">Contactar</Link>
+      </div>
     </article>
 
     <div class="order-1 w-full rounded-lg">
